@@ -15,5 +15,12 @@ namespace svAmplifier.Controllers
             return View();
             //daebjkfc-lasndc
         }
+
+        [HttpPost]
+        public IActionResult Login()
+        {
+            return View();
+            //daebjkfc-lasndc
+        }
     }
 }

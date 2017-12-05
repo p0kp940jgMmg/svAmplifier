@@ -1,1 +1,16 @@
-﻿
+﻿@using svAmplifier.Models.VM
+@model LoginVM
+
+<form asp-controller="Login" asp-action="Login">
+    <label asp-for="Email"></label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+    <span asp-validation-for="Password"></span>
+
+    <br />
+    <input type="submit" value="Login" />
+</form>
+
