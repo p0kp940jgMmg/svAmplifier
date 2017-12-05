@@ -5,9 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Entities\" />
-    <Folder Include="Models\VM\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="Views\NewFolder\" />
     <Folder Include="Views\User\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\Styles\" />
