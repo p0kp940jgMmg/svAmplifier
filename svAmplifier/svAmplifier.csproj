@@ -8,7 +8,6 @@
     <Folder Include="Views\Home\" />
     <Folder Include="Views\NewFolder\" />
     <Folder Include="Views\User\" />
-    <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\Styles\" />
     <Folder Include="wwwroot\Scripts\" />
   </ItemGroup>
