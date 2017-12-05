@@ -1,6 +1,6 @@
-﻿$red: #F37272;
-$brown: #584E4A;
-$whitey: #f0f0f0;
+﻿$red: #F37272; //knappen
+$brown: #584E4A; //bakgrunden
+$whitey: #ffffff; //förgrunden
 
 $snap: cubic-bezier(1.000, 0.005, 0.240, 1.000);
 $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
@@ -52,7 +52,7 @@ body {
 
     &:active {
         i {
-            opacity: 0.8
+            opacity: 0.8;
         }
     }
 
@@ -88,11 +88,13 @@ body {
     margin: 0;
     padding: 0;
 
+
     li {
         height: 60px;
         margin-bottom: 30px;
         transform: translateX(-300px);
         transition: transform .7s 0s $snap;
+
 
         &:nth-child(2) {
             margin-left: 40px;
@@ -196,4 +198,22 @@ h1 {
 
 body {
     color: $brown;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: row;
+
+    img {
+        max-height: 200px;
+    }
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row-reverse;
+
+    img {
+        max-height: 300px;
+    }
 }
