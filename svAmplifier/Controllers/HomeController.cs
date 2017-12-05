@@ -14,7 +14,6 @@ namespace svAmplifier.Controllers
         public IActionResult Index()
         {
             return View();
-            //daebjkfc-lasndc
         }
 
         //i formulär: alltid en get och en post. en som visar... 
@@ -22,7 +21,6 @@ namespace svAmplifier.Controllers
         public IActionResult Login()
         {
             return View();
-            //daebjkfc-lasndc
         }
 
         [HttpPost]

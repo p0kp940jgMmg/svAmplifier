@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,16 +17,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\Scripts\_LayoutTypeScript.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="jQuery" Version="3.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\Scripts\_LayoutTypeScript.ts" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
 
 </Project>
