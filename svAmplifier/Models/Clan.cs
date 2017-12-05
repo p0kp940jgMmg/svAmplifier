@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using svAmplifier.Models.Entities
+using svAmplifier.Models.Entities;
 
 namespace svAmplifier.Models
 {
