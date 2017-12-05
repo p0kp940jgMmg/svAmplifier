@@ -13,14 +13,12 @@ namespace svAmplifier.Controllers
         public IActionResult Index()
         {
             return View();
-            //daebjkfc-lasndc
         }
 
         [HttpPost]
         public IActionResult Login()
         {
             return View();
-            //daebjkfc-lasndc
         }
     }
 }
