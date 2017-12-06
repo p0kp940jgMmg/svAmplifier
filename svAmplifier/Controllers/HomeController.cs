@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using svAmplifier.Models;
 using svAmplifier.Models.Entities;
@@ -11,6 +12,7 @@ using svAmplifier.Models.VM;
 
 namespace svAmplifier.Controllers
 {
+    
     public class HomeController : Controller
     {
         AccountRepository accountRepository;
@@ -39,7 +41,7 @@ namespace svAmplifier.Controllers
         [HttpGet]
         public async Task<IActionResult> Login()            
         {
-            await accountRepository.AddUser(new RegisterUserVM { UserName = "danne", Password="Password_123"});
+            await accountRepository.RegisterUser(new RegisterUserVM { UserName = "danne", Password="Password_123"});
             return View();
         }
 
@@ -69,9 +71,15 @@ namespace svAmplifier.Controllers
         }
 
         [HttpPost]
-        public IActionResult RegisterUser(RegisterUserVM registerUserVM)
+        public async Task<IActionResult> RegisterUser(RegisterUserVM registerUserVM)
         {
-            return View();
+            if (!ModelState.IsValid)
+                return View(registerUserVM);
+           
+            if (! await accountRepository.RegisterUser(registerUserVM))
+                return View(registerUserVM);
+
+            return RedirectToAction(nameof(UserController.Index), "User");
         }
 
     }
