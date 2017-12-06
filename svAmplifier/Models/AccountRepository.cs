@@ -108,7 +108,7 @@ namespace svAmplifier.Models
             var result = await userManager.CreateAsync(new IdentityUser(registerUserVM.UserName), registerUserVM.Password);
             if (result.Succeeded)
                 await signInManager.PasswordSignInAsync(registerUserVM.UserName, registerUserVM.Password, false, false);
-            //skapa egen användare i tabell9
+            //skapa egen användare i tabell
             return result.Succeeded;
         }
 
