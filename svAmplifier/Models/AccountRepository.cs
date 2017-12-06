@@ -82,16 +82,16 @@ namespace svAmplifier.Models
         };
 
 
-        public async Task<bool> AddUser(RegisterUserVM regVm)
-        {
-            //var result =
-            //    await userManager.CreateAsync(
-            //        new IdentityUser(/*regVm.UserName*/
-            //                         /* ), regVm.Password*/));
-            //nu ska vi skapa en user i vår tabell
-            //return result.Succeeded;
-            return true;
-        }
+        //public async Task<bool> AddUser(RegisterUserVM regVm)
+        //{
+        //    //var result =
+        //    //    await userManager.CreateAsync(
+        //    //        new IdentityUser(/*regVm.UserName*/
+        //    //                         /* ), regVm.Password*/));
+        //    //nu ska vi skapa en user i vår tabell
+        //    //return result.Succeeded;err
+        //    return true;
+        //}
 
         //signinmanager
         public async Task<bool> Login(LoginVM loginVM)
@@ -100,6 +100,15 @@ namespace svAmplifier.Models
                 await signInManager.PasswordSignInAsync(
                 loginVM.Email, loginVM.Password, false, false);
 
+            return result.Succeeded;
+        }
+
+        public async Task<bool> RegisterUser(RegisterUserVM registerUserVM)
+        {
+            var result = await userManager.CreateAsync(new IdentityUser(registerUserVM.UserName), registerUserVM.Password);
+            if (result.Succeeded)
+                await signInManager.PasswordSignInAsync(registerUserVM.UserName, registerUserVM.Password, false, false);
+            //skapa egen användare i tabell9
             return result.Succeeded;
         }
 
