@@ -1,6 +1,6 @@
 ﻿[
   {
-    "outputFile": "wwwroot/Styles/_LayoutStyleSheet.css",
-    "inputFile": "Sass/_LayoutStyleSheet.scss"
+    "outputFile": "wwwroot/Styles/_LayoutIndexStyleSheet.css",
+    "inputFile": "Sass/_LayoutIndexStyleSheet.scss"
   }
 ]

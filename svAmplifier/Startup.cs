@@ -43,6 +43,7 @@ namespace svAmplifier
         {
             app.UseDeveloperExceptionPage();
             app.UseAuthentication();
+            app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }
     }
