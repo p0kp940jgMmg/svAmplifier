@@ -20,6 +20,11 @@ namespace svAmplifier.Controllers
             this.accountRepository = accountRepository;
         }
 
+        public IActionResult Test()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -51,5 +56,20 @@ namespace svAmplifier.Controllers
             return RedirectToAction(nameof(Index),nameof(User));
 
         }
+
+
+        [HttpGet]
+        public string Logout()
+        {
+
+            return "Sucess";
+        }
+
+        //[HttpGet]
+        //public async Task<IActionResult> Logout()
+        //{
+
+        //    return RedirectToAction(nameof(Index), "Home");
+        //}
     }
 }

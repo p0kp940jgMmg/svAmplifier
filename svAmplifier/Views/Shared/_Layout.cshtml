@@ -18,10 +18,17 @@
                     <span class="navbar-toggler-bar"></span>
                     <span class="navbar-toggler-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://www.example.com">LOGO</a>
+                <a class="navbar-brand" href="http://localhost:58471/home/test">svAmplifier</a>
             </div>
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Go to Market" data-placement="bottom" href="/user/map" target="_blank">
+                            <i class="fa fa-shopping-bag"></i>
+                        </a>
+                    </li>
+
+
                     <li class="nav-item">
                         <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/" target="_blank">
                             <i class="fa fa-twitter"></i>
@@ -41,13 +48,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/" target="_blank">
-                            <i class="fa fa-github"></i>
-                            <p class="hidden-lg-up">GitHub</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://www.example.com" target="_blank" class="btn btn-danger btn-round">Login</a>
+                        @*<a href="user/logout" target="_blank" class="btn btn-danger btn-round">Logout</a>*@
+                        <a asp-controller="User" class="btn btn-danger btn-round" asp-action="Logout">Logout</a>
                     </li>
                 </ul>
             </div>
