@@ -1,7 +1,8 @@
 ﻿@using svAmplifier.Models.VM
 @model LoginVM
 
-<form asp-controller="Login" asp-action="Login">
+    @*ändrat till home (tan)*@
+<form asp-controller="Home" asp-action="Login">
     <label asp-for="Email"></label>
     <input asp-for="Email" />
     <span asp-validation-for="Email"></span>
