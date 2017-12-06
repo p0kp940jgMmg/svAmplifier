@@ -2198,7 +2198,7 @@ textarea.form-control {
         padding: 20px 15px;
         font-size: 14px;
         color: #66615B;
-        text-transform: uppercase;
+        /*text-transform: uppercase;*/
     }
 
     .navbar .nav-link i {
@@ -2325,6 +2325,7 @@ textarea.form-control {
 
     .navbar.fixed-top .nav-link i {
         top: 4px;
+        font-size: x-large;
     }
 
 .navbar-absolute {

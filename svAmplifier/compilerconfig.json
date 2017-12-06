@@ -2,5 +2,9 @@
   {
     "outputFile": "wwwroot/Styles/_LayoutIndexStyleSheet.css",
     "inputFile": "Sass/_LayoutIndexStyleSheet.scss"
+  },
+  {
+    "outputFile": "wwwroot/Styles/User-Index.css",
+    "inputFile": "Sass/User-Index.scss"
   }
 ]

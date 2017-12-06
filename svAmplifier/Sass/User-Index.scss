@@ -1,0 +1,24 @@
+﻿body {
+}
+
+.marketItemCollumn {
+    padding: 4px 7px 4px 2px;
+    color: antiquewhite;
+
+    .marketItem {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .thumbnail {
+
+            img {
+                max-height: 100px;
+                max-width: 100px;
+            }
+        }
+
+        .marketInfo {
+        }
+    }
+}
