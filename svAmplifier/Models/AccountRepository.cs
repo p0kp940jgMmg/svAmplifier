@@ -14,7 +14,7 @@ namespace svAmplifier.Models
     {
         UserManager<IdentityUser> userManager;
         SignInManager<IdentityUser> signInManager;
-
+       
         public AccountRepository(UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager/*IdentityDbContext identityContext*/)
         {
@@ -84,16 +84,20 @@ namespace svAmplifier.Models
 
         public async Task<bool> AddUser(RegisterUserVM regVm)
         {
-            var result =
-                await userManager.CreateAsync(new IdentityUser(regVm.UserName), regVm.Password);
+            //var result =
+            //    await userManager.CreateAsync(
+            //        new IdentityUser(/*regVm.UserName*/
+            //                         /* ), regVm.Password*/));
             //nu ska vi skapa en user i vår tabell
-            return result.Succeeded;
+            //return result.Succeeded;
+            return true;
         }
 
         //signinmanager
         public async Task<bool> Login(LoginVM loginVM)
         {
-            var result = await signInManager.PasswordSignInAsync(
+            var result = 
+                await signInManager.PasswordSignInAsync(
                 loginVM.Email, loginVM.Password, false, false);
 
             return result.Succeeded;

@@ -20,7 +20,7 @@ namespace svAmplifier.Controllers
             this.accountRepository = accountRepository;
         }
 
-        public IActionResult Test()
+        public IActionResult Success()
         {
             return View();
         }
@@ -53,23 +53,21 @@ namespace svAmplifier.Controllers
                 return View(loginVM);
             }
 
-            return RedirectToAction(nameof(Index),nameof(User));
+            return RedirectToAction(nameof(Success));
 
         }
-
 
         [HttpGet]
-        public string Logout()
+        public IActionResult RegisterUser()
         {
-
-            return "Sucess";
+            return View();
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Logout()
-        //{
+        [HttpPost]
+        public IActionResult RegisterUser(RegisterUserVM registerUserVM)
+        {
+            return View();
+        }
 
-        //    return RedirectToAction(nameof(Index), "Home");
-        //}
     }
 }

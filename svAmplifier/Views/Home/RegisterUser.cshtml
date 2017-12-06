@@ -1,0 +1,47 @@
+﻿@using svAmplifier.Models.VM
+@model RegisterUserVM
+
+<form asp-controller="Home" asp-action="RegisterUser">
+    <label asp-for="UserName"></label>
+    <input asp-for="UserName" />
+    <span asp-validation-for="UserName"></span>
+    <br />
+    <label asp-for="Email"></label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+    <br />
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName" />
+    <span asp-validation-for="FirstName"></span>
+    <br />
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName" />
+    <span asp-validation-for="LastName"></span>
+    <br />
+    <label asp-for="Street"></label>
+    <input asp-for="Street" />
+    <span asp-validation-for="Street"></span>
+    <br />
+    <label asp-for="City"></label>
+    <input asp-for="City" />
+    <span asp-validation-for="City"></span>
+    <br />
+    <label asp-for="Zipcode"></label>
+    <input asp-for="Zipcode" />
+    <span asp-validation-for="Zipcode"></span>
+    <br />
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+    <span asp-validation-for="Password"></span>
+    <br />
+    <label asp-for="TelephoneNumber"></label>
+    <input asp-for="TelephoneNumber" />
+    <span asp-validation-for="TelephoneNumber"></span>
+    <br />
+    <label asp-for="Clan"></label>
+    <input asp-for="Clan" />
+    <span asp-validation-for="Clan"></span>
+    <br />
+    <input type="submit" value="Login" />
+</form>
+
