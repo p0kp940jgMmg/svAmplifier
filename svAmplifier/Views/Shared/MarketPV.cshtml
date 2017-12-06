@@ -1,18 +1,32 @@
-﻿@model MarketItemVM[]
+﻿
 
-<section class="col-xs-12 col-sm-6 col-md-12">
-    @foreach (var item in Model)
-    {
-        <article class="search-result row">
-            <div class="col-xs-12 col-sm-12 col-md-3">
-                <a href="#" title="Lorem ipsum" class="thumbnail"><img width="200" src="https://image.tmdb.org/t/p/w500/@item.UrlPic" height="300" alt="Lorem ipsum" /></a>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-                <h3><a href="#" title="">@item.MovieTitle</a></h3>
-                <p>@item.MovieOverview</p>
-                <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-minus"></i></a></span>
-            </div>
-            <span class="clearfix borda"></span>
-        </article>
-    }
-</section>
+<div class="marketItem">
+    <div class="thumbnail">
+        <a href="#" title="Go to item">
+            <img src="https://st2.depositphotos.com/5155283/10941/i/950/depositphotos_109410278-stock-photo-mushrooms-champignon-watercolor-drawing-3.jpg" alt="Lorem ipsum" />
+        </a>
+    </div>
+    <div class="marketInfo">
+        <p>Champinjon</p>
+        <p>Solna</p>
+        <p>1kg</p>
+        <p>100kr</p>
+        <p>Username</p>
+        <p>2017-12-06</p>
+    </div>
+</div>
+
+
+@*<div class="">
+        <a href="#" title="Lorem ipsum" class="thumbnail"><img width="200" src="@item.Mushroom.PicUrl" height="300" alt="Lorem ipsum" /></a>
+        <a href="#" title="Lorem ipsum" class="thumbnail"><img src="https://st2.depositphotos.com/5155283/10941/i/950/depositphotos_109410278-stock-photo-mushrooms-champignon-watercolor-drawing-3.jpg" height="300" alt="Lorem ipsum" /></a>
+        <h3><a title="">@item.Mushroom.Type</a></h3>
+        <h3><a title="">Champinjon</a></h3>
+        <p>@item.SalesAdress.City</p>
+        <p>@item.Weight</p>
+        <p>@item.Price</p>
+        <p>@item.SalesPersonUsername</p>
+        <p>@item.PickDate</p>
+
+        <span class="plus"><a href="#" title="Lorem ipsum"><i class=""></i></a></span>
+    </div>*@
