@@ -28,12 +28,12 @@ namespace svAmplifier
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Room;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            //var connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Room;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             var connStringAzure = config.GetConnectionString("connString");
 
             services.AddDbContext<IdentityDbContext>(
-                o => o.UseSqlServer(connString));
+                o => o.UseSqlServer(connStringAzure));
 
             services.AddTransient<AccountRepository>();
 
