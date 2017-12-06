@@ -1,0 +1,18 @@
+﻿@model MarketItemVM[]
+
+<section class="col-xs-12 col-sm-6 col-md-12">
+    @foreach (var item in Model)
+    {
+        <article class="search-result row">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <a href="#" title="Lorem ipsum" class="thumbnail"><img width="200" src="https://image.tmdb.org/t/p/w500/@item.UrlPic" height="300" alt="Lorem ipsum" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+                <h3><a href="#" title="">@item.MovieTitle</a></h3>
+                <p>@item.MovieOverview</p>
+                <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-minus"></i></a></span>
+            </div>
+            <span class="clearfix borda"></span>
+        </article>
+    }
+</section>
