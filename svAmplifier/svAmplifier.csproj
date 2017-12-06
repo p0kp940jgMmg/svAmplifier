@@ -7,17 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\NewFolder\**" />
-    <Compile Remove="Views\User\**" />
-    <Content Remove="Views\NewFolder\**" />
-    <Content Remove="Views\User\**" />
-    <EmbeddedResource Remove="Views\NewFolder\**" />
-    <EmbeddedResource Remove="Views\User\**" />
-    <None Remove="Views\NewFolder\**" />
-    <None Remove="Views\User\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="jQuery" Version="3.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />

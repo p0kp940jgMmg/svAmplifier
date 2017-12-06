@@ -1,13 +1,17 @@
-﻿
-<div class="historyItem" id="">
-    <div class="thumbnail">
-        <a href="#" title="Go to item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3p1vk-GBbzspEsp5Kfy1m5yTEvuijs2GLTvQKHvD8HAhrPhzq" alt="Lorem ipsum" />
-        </a>
+﻿@model UserIndexLayoutVM
+
+@foreach (var item in Model.Picks)
+{
+    <div class="historyItem" id="">
+        <div class="thumbnail">
+            <a href="#" title="Go to item">
+                <img src="@item.PickedMushroom.PicUrl" alt="Lorem ipsum" />
+            </a>
+        </div>
+        <div class="historyInfo">
+            <p>@item.PickedMushroom.Type</p>
+            <p>Vikt: @item.Weight</p>
+            <p>Datum: @item.PickDate</p>
+        </div>
     </div>
-    <div class="historyInfo">
-        <p>Champinjon</p>
-        <p>Vikt: 1kg</p>
-        <p>Datum: 2017-12-06</p>
-    </div>
-</div>
+}

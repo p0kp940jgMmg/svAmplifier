@@ -2,14 +2,49 @@
 }
 
 .userIndexContainer {
-    padding-top: 150px;
+    padding-top: 100px;
     justify-content: center;
     flex-direction: row;
     display: flex;
 }
 
-.marketItemColumn {
+
+.historyItemColumn {
     padding: 10px 4px 4px 4px;
+    flex-wrap: wrap;
+
+    h4 {
+        padding: 10px 4px 4px 4px;
+    }
+
+    .historyItem {
+        padding: 2px 7px 4px 4px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        display: flex;
+        width: 500px;
+        color: black;
+        background-color: white;
+
+        .thumbnail {
+
+            img {
+                max-height: 150px;
+                max-width: 150px;
+            }
+        }
+
+        .historyInfo {
+        }
+    }
+}
+
+.userIndexGutter {
+    padding: 2px 50px 4px 50px;
+}
+
+.marketItemColumn {
+    padding: 78px 4px 4px 4px;
     flex-wrap: wrap;
 
     .marketItem {
@@ -39,38 +74,4 @@
     .marketItemColumn-btn {
         width: 500px;
     }
-}
-
-.historyItemColumn {
-    padding: 10px 4px 4px 4px;
-    flex-wrap: wrap;
-
-    .historyItem {
-
-        padding: 2px 7px 4px 4px;
-        border: solid;
-        border-width: 1px;
-        border-color: black;
-        flex-wrap: wrap;
-        flex-direction: row;
-        display: flex;
-        width: 500px;
-        color: black;
-        background-color: white;
-
-        .thumbnail {
-
-            img {
-                max-height: 150px;
-                max-width: 150px;
-            }
-        }
-
-        .historyInfo {
-        }
-    }
-}
-
-.userIndexGutter {
-    padding: 2px 50px 4px 50px;
 }
