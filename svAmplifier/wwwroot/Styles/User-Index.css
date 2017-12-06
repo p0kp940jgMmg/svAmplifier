@@ -1,11 +1,47 @@
-﻿.marketItemCollumn {
-  padding: 4px 7px 4px 2px;
-  color: antiquewhite; }
-  .marketItemCollumn .marketItem {
-    display: flex;
+﻿.userIndexContainer {
+  padding-top: 150px;
+  justify-content: center;
+  flex-direction: row;
+  display: flex; }
+
+.marketItemColumn {
+  padding: 10px 4px 4px 4px;
+  flex-wrap: wrap; }
+  .marketItemColumn .marketItem {
+    padding: 2px 7px 4px 4px;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    flex-wrap: wrap;
     flex-direction: row;
-    flex-wrap: wrap; }
-    .marketItemCollumn .marketItem .thumbnail img {
-      max-height: 100px;
-      max-width: 100px; }
+    display: flex;
+    width: 500px;
+    color: black;
+    background-color: white; }
+    .marketItemColumn .marketItem .thumbnail img {
+      max-height: 150px;
+      max-width: 150px; }
+  .marketItemColumn .marketItemColumn-btn {
+    width: 500px; }
+
+.historyItemColumn {
+  padding: 10px 4px 4px 4px;
+  flex-wrap: wrap; }
+  .historyItemColumn .historyItem {
+    padding: 2px 7px 4px 4px;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    width: 500px;
+    color: black;
+    background-color: white; }
+    .historyItemColumn .historyItem .thumbnail img {
+      max-height: 150px;
+      max-width: 150px; }
+
+.userIndexGutter {
+  padding: 2px 50px 4px 50px; }
 

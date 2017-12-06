@@ -1,24 +1,76 @@
 ﻿body {
 }
 
-.marketItemCollumn {
-    padding: 4px 7px 4px 2px;
-    color: antiquewhite;
+.userIndexContainer {
+    padding-top: 150px;
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+}
+
+.marketItemColumn {
+    padding: 10px 4px 4px 4px;
+    flex-wrap: wrap;
 
     .marketItem {
-        display: flex;
-        flex-direction: row;
+        padding: 2px 7px 4px 4px;
+        border: solid;
+        border-width: 1px;
+        border-color: black;
         flex-wrap: wrap;
+        flex-direction: row;
+        display: flex;
+        width: 500px;
+        color: black;
+        background-color: white;
 
         .thumbnail {
 
             img {
-                max-height: 100px;
-                max-width: 100px;
+                max-height: 150px;
+                max-width: 150px;
             }
         }
 
         .marketInfo {
         }
     }
+
+    .marketItemColumn-btn {
+        width: 500px;
+    }
+}
+
+.historyItemColumn {
+    padding: 10px 4px 4px 4px;
+    flex-wrap: wrap;
+
+    .historyItem {
+
+        padding: 2px 7px 4px 4px;
+        border: solid;
+        border-width: 1px;
+        border-color: black;
+        flex-wrap: wrap;
+        flex-direction: row;
+        display: flex;
+        width: 500px;
+        color: black;
+        background-color: white;
+
+        .thumbnail {
+
+            img {
+                max-height: 150px;
+                max-width: 150px;
+            }
+        }
+
+        .historyInfo {
+        }
+    }
+}
+
+.userIndexGutter {
+    padding: 2px 50px 4px 50px;
 }
