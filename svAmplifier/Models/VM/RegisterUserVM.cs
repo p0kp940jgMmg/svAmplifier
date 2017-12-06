@@ -10,6 +10,7 @@ namespace svAmplifier.Models.VM
     {
         [Required]
         public string UserName { get; set; }
+
         [Required]
         public string Email { get; set; }
         public string FirstName { get; set; }
@@ -19,7 +20,12 @@ namespace svAmplifier.Models.VM
         public string Zipcode { get; set; }
         public string TelephoneNumber { get; set; }
         public string Clan { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Please enter a Password")]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "Please enter a Password")]
+        [Compare("Password", ErrorMessage = "Password does not match")]
+        public string Password2 { get; set; }
     }
 }
