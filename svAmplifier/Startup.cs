@@ -39,7 +39,7 @@ namespace svAmplifier
                 o => o.UseSqlServer(connStringAzure));
 
             services.AddTransient<AccountRepository>();
-
+            services.AddTransient<UserContext>();
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityDbContext>()
                 .AddDefaultTokenProviders();

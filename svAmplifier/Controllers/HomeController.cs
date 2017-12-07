@@ -16,10 +16,12 @@ namespace svAmplifier.Controllers
     public class HomeController : Controller
     {
         AccountRepository accountRepository;
+        UserContext context;
 
-        public HomeController(AccountRepository accountRepository)
+        public HomeController(AccountRepository accountRepository, UserContext context)
         {
             this.accountRepository = accountRepository;
+            this.context = context;
         }
 
         public IActionResult Success()

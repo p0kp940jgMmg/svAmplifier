@@ -1,4 +1,10 @@
-﻿body {
+﻿$blaa: #139cf7;
+$ljusblaa: #88EA9A;
+$rod: #871F02;
+$gul: #F99C04;
+$gron: #5BA512;
+
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -75,11 +81,8 @@
         }
 
         .marketInfo {
-            /*danne*/
-            font-family:Jokerman;
-            /*#bootstrap-overrides p{
-                font-size:large;
-            }*/
+            border-radius: 25px;
+            border: 2px solid $blaa;
         }
     }
 

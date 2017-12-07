@@ -1,0 +1,4 @@
+﻿Scaffold-DbContext "Data Source=dottnett.database.windows.net;Initial Catalog=Room;Integrated Security=False;User ID=danielsoderberg;Password=T0matS()ppa;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Entities" -Context "UserContext" -schema "dco" -Force
+
+
+//det måste kompilera innan scaffold utförs
