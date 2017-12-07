@@ -7,7 +7,7 @@ namespace svAmplifier.Models.VM
 {
     public class Mushroom
     {
-        public MushroomType Type { get; set; }
+        public string Name { get; set; }
         public string PicUrl { get; set; }
     }
 }

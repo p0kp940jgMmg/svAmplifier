@@ -1,16 +1,19 @@
-﻿using svAmplifier.Models.VM;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace svAmplifier.Models.Entities
 {
-    public class Pick
+    public partial class Pick
     {
         public int Id { get; set; }
-        public Mushroom Mushroom { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+        public string MushroomName { get; set; }
+        public string MushroomPicUrl { get; set; }
+        public DateTime DatePicked { get; set; }
+        public int? WeightInGrams { get; set; }
+        public int? UserId { get; set; }
+
         public User User { get; set; }
-        public Location Location { get; set; }
     }
 }

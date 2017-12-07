@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace svAmplifier.Models.Entities
 {
-    public class User
+    public partial class User
     {
+        public User()
+        {
+            Pick = new HashSet<Pick>();
+        }
+
         public int Id { get; set; }
-        public string Email { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        //public string Clan { get; set; }
-        public Address Address { get; set; }
+        public string Street { get; set; }
+        public string Zipcode { get; set; }
+        public string City { get; set; }
+        public string AspNetId { get; set; }
+
+        public ICollection<Pick> Pick { get; set; }
     }
 }
