@@ -8,13 +8,15 @@ body {
 
 .page {
   height: 100%;
-  background-color: #584E4A; }
+  background-color: #584E4A;
+  background-image: url(http://sandvikssamfallighet.se/index-filer/Kartor/Bilder/Sandvik.gif); }
 
 .content {
   height: 200%;
   transform-origin: top left;
   transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  font-family: 'Times New Roman'; }
 
 /*p {
     font-family: Arial Black, Arial, Helvetica;
@@ -34,12 +36,12 @@ body {
   cursor: pointer;
   width: 100px;
   height: 80px;
-  background-color: #F37272;
+  background-color: #f90101;
   border-bottom-right-radius: 100%; }
   .menu_toggle:active i {
     opacity: 0.8; }
   .menu_toggle i {
-    color: #ffffff; }
+    color: #f90101; }
   .menu_toggle .menu_open,
   .menu_toggle .menu_close {
     position: absolute;
@@ -98,12 +100,14 @@ body {
     .menu_items a:hover {
       color: #ffffff; }
       .menu_items a:hover .icon:after {
-        border-color: #F37272; }
+        border-color: #f90101; }
     .menu_items a:active .icon {
-      color: #F37272; }
+      color: #f90101; }
 
 /* Let's open up the menu */
 .shazam {
+  background-color: #f37272;
+  background-image: url(http://sandvikssamfallighet.se/index-filer/Kartor/Bilder/Sandvik.gif);
   /*.content_inner {
     height: 100%;
   }*/ }
@@ -123,10 +127,11 @@ body {
 
 h1 {
   padding-bottom: 15px;
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 1px solid #ddd;
+  font-family: Arial; }
 
 body {
-  color: #584E4A; }
+  /*color: $red2;*/ }
 
 .container1 {
   display: flex;

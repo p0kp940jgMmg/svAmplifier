@@ -17,8 +17,8 @@ namespace svAmplifier.Controllers
         public IActionResult Index()
         {
 
-            return View(new UserIndexLayoutVM());
-            //return Content("logged in as.." + User.Identity.Name);
+            //return View(new UserIndexLayoutVM());
+            return Content("logged in as.." + User.Identity.Name);
         }
 
         //TEST

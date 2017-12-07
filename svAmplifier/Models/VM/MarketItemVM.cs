@@ -13,7 +13,7 @@ namespace svAmplifier.Models.VM
         [Required]
         public double Price { get; set; }
         public string SalesPersonUsername { get; set; }
-        public Address SalesAdress { get; set; }
+        //public Address SalesAdress { get; set; /*}*/
         public DateTime PickDate { get; set; }
         public double Weight { get; set; }
     }
