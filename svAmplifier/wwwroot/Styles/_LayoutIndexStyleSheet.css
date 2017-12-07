@@ -16,6 +16,9 @@ body {
   transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
   background-color: #ffffff; }
 
+/*p {
+    font-family: Arial Black, Arial, Helvetica;
+}*/
 .content_inner {
   height: 50%;
   overflow-y: auto;
