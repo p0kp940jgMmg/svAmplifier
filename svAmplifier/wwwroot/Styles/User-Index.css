@@ -17,9 +17,9 @@
     width: 500px;
     color: black;
     background-color: white; }
-    .historyItemColumn .historyItem .thumbnail img {
-      max-height: 150px;
-      max-width: 150px; }
+    .historyItemColumn .historyItem .thumbnail .map {
+      height: 150px;
+      width: 150px; }
 
 .userIndexGutter {
   padding: 2px 50px 4px 50px; }

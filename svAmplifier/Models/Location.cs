@@ -7,7 +7,8 @@ namespace svAmplifier.Models
 {
     public class Location
     {
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        //string pga JS parsade double fel
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
     }
 }

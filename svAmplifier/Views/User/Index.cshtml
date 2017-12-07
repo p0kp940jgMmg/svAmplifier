@@ -6,19 +6,21 @@
 <div class="userIndexContainer">
     <div class="historyItemColumn">
         <h4>Din plockningar</h4>
-            @{ Html.RenderPartial("HistoryPV"); }
+        @{ Html.RenderPartial("HistoryPV"); }
     </div>
 
     <div class="userIndexGutter"></div>
-
     <div class="marketItemColumn">
         <a href="/user/myItems" class="btn btn-danger btn-round marketItemColumn-btn">My Items</a>
         <h4>Marketplace</h4>
-            @{ Html.RenderPartial("MarketPV"); }
+        @{ Html.RenderPartial("MarketPV"); }
     </div>
 </div>
-
 @section scripts{
+    <script src="~/Scripts/UserIndexJavaScript.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-NO0BxUeyZRy0uCpNaUZHmzazDH9R7xk&callback=initMap">
+    </script>
 
     <link href="~/Styles/TestStyleSheet.css" rel="stylesheet" />
     <link href="~/Styles/User-Index.min.css" rel="stylesheet" />

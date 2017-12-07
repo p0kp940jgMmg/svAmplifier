@@ -20,7 +20,7 @@ namespace svAmplifier.Models.VM
                      PickedMushroom = new Mushroom {
                          PicUrl = "https://st2.depositphotos.com/5155283/10941/i/950/depositphotos_109410278-stock-photo-mushrooms-champignon-watercolor-drawing-3.jpg",
                          Type = MushroomType.Chanterelle},
-                     PickLocation = new Location{ Latitude = 3, Longitude = 5},
+                     PickLocation = new Location{ Latitude = "59.368879", Longitude = "18.008433"},
                      UserId = 1,
                      Weight = 1000
                 },
@@ -31,7 +31,7 @@ namespace svAmplifier.Models.VM
                      PickedMushroom = new Mushroom {
                          PicUrl = "https://st2.depositphotos.com/5155283/10941/i/950/depositphotos_109410278-stock-photo-mushrooms-champignon-watercolor-drawing-3.jpg",
                          Type = MushroomType.Karl_Johan},
-                     PickLocation = new Location{ Latitude = 4, Longitude = 6},
+                     PickLocation = new Location{ Latitude = "59.276868", Longitude = "18.774261"},
                      UserId = 2,
                      Weight = 500
                 },
