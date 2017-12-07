@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using svAmplifier.Models;
 using Microsoft.Extensions.Configuration;
+using svAmplifier.Models.Entities;
 
 namespace svAmplifier
 {
@@ -31,6 +32,8 @@ namespace svAmplifier
             //var connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Room;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             var connStringAzure = config.GetConnectionString("connString");
+
+            services.AddDbContext<UserContext>(o => o.UseSqlServer(connStringAzure));
 
             services.AddDbContext<IdentityDbContext>(
                 o => o.UseSqlServer(connStringAzure));
