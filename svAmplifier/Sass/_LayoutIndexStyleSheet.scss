@@ -30,12 +30,19 @@ body {
    
 }
 
+//danne
+/*p {
+    font-family: Arial Black, Arial, Helvetica;
+}*/
+
 .content_inner {
     // essential
     height: 50%; // compensate for higher .content
     overflow-y: auto; // set expected overflow
     // styling
     padding: 50px 20%;
+
+
 }
 
 /* basically all styling from now on */
