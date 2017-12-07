@@ -13,6 +13,11 @@ namespace svAmplifier.Models.Entities
         public DateTime DatePicked { get; set; }
         public int? WeightInGrams { get; set; }
         public int? UserId { get; set; }
+        public decimal? Price { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string Zip { get; set; }
+        public int? SalesItem { get; set; }
 
         public User User { get; set; }
     }

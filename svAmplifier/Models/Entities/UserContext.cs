@@ -24,6 +24,10 @@ namespace svAmplifier.Models.Entities
             {
                 entity.ToTable("Pick", "dco");
 
+                entity.Property(e => e.City)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.DatePicked).HasColumnType("datetime");
 
                 entity.Property(e => e.Latitude)
@@ -41,6 +45,16 @@ namespace svAmplifier.Models.Entities
 
                 entity.Property(e => e.MushroomPicUrl)
                     .HasMaxLength(128)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Price).HasColumnType("money");
+
+                entity.Property(e => e.Street)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Zip)
+                    .HasMaxLength(32)
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.User)
