@@ -24,6 +24,10 @@ namespace svAmplifier.Models.Entities
         {
             modelBuilder.Entity<User>(entity =>
             {
+                //entity.Property(idNr =>
+                //{
+
+                //});
                 entity.Property(e => e.Email);
 
                 entity.Property(e => e.UserName);
@@ -35,6 +39,7 @@ namespace svAmplifier.Models.Entities
 
             modelBuilder.Entity<Pick>(entity =>
             {
+                entity.ToTable("User");
                 entity.Property(e => e.Mushroom);
 
                 entity.Property(e => e.User);
