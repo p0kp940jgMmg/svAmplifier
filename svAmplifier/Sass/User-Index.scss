@@ -25,7 +25,7 @@
         display: flex;
         width: 500px;
         color: black;
-        background-color: white;
+        background-color: blue;
 
         .thumbnail {
             .map {
@@ -75,6 +75,11 @@
         }
 
         .marketInfo {
+            /*danne*/
+            font-family:Jokerman;
+            /*#bootstrap-overrides p{
+                font-size:large;
+            }*/
         }
     }
 
