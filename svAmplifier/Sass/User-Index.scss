@@ -34,12 +34,9 @@ body {
         background-color: blue;
 
         .thumbnail {
-            border-radius: 25px;
-            border: 5px solid #f99c04;
-
-            img {
-                max-height: 150px;
-                max-width: 150px;
+            .map {
+                height: 150px;
+                width: 150px;
             }
         }
 

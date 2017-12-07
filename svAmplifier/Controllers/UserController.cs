@@ -21,5 +21,11 @@ namespace svAmplifier.Controllers
             //return Content("logged in as.." + User.Identity.Name);
         }
 
+        //TEST
+        public IActionResult Test()
+        {
+
+            return View(new UserIndexLayoutVM());
+        }
     }
 }

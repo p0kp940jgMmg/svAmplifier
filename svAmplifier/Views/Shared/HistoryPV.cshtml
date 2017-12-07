@@ -4,9 +4,7 @@
 {
     <div class="historyItem" id="">
         <div class="thumbnail">
-            <a href="#" title="Go to item">
-                <img src="@item.PickedMushroom.PicUrl" alt="Lorem ipsum" />
-            </a>
+                <div id="map-@(item.UserId++)" class="map" lat="@item.PickLocation.Latitude" lng="@item.PickLocation.Longitude"></div>
         </div>
         <div class="historyInfo">
             <p>@item.PickedMushroom.Type</p>
