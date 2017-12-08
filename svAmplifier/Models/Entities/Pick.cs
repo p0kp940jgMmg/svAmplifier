@@ -17,7 +17,7 @@ namespace svAmplifier.Models.Entities
         public string City { get; set; }
         public string Street { get; set; }
         public string Zip { get; set; }
-        public int? SalesItem { get; set; }
+        public bool? SalesItem { get; set; }
 
         public User User { get; set; }
     }

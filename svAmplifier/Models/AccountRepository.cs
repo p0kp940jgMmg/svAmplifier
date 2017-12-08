@@ -32,65 +32,27 @@ namespace svAmplifier.Models
             this.contextAccessor = contextAccessor;
             this.context = context;
         }
-        //static List<User> users = new List<User>
-        //{
-        //    new User {
-        //        UserName = "Danne",
-        //        Email = "danne@danne.com",
-        //        Password = "password",
-        //        Address = new Address
-        //        {
-        //            City = "Sthlm",
-        //            Street = "Hornstull",
-        //            Zipcode = "12344"
-        //        }
-        //    },
-        //    new User {
-        //        UserName = "Pontus",
-        //        Email = "pontus@pontus.com",
-        //        Password = "password",
-        //        Address = new Address
-        //        {
-        //            City = "Sthlm",
-        //            Street = "Kistagatan",
-        //            Zipcode = "16533"
-        //        }
-        //    },
-        //    new User {
-        //        UserName = "Håkan",
-        //        Email = "hakan@hakan.com",
-        //        Password = "password",
-        //        Address = new Address
-        //        {
-        //            City = "Sollentuna",
-        //            Street = "Sollentunagatan",
-        //            Zipcode = "12452"
-        //        }
-        //    },
-        //    new User {
-        //        UserName = "Cristian",
-        //        Email = "cristian@cristian.com",
-        //        Password = "password",
-        //        Address = new Address
-        //        {
-        //            City = "Solna",
-        //            Street = "Solnagatan",
-        //            Zipcode = "1113"
-        //        }
-        //    },
-        //    new User {
-        //        UserName = "Patrick",
-        //        Email = "patrik@patrik.com",
-        //        Password = "password",
-        //        Address = new Address
-        //        {
-        //            City = "Malmö",
-        //            Street = "Malmögatan",
-        //            Zipcode = "22344"
-        //        }
-        //    }
-        //}
 
+        internal async Task<UserIndexLayoutVM> GetUserIndexVM()
+        {
+            UserIndexLayoutVM userIndexLayout = new UserIndexLayoutVM();
+
+            var ltMarketItems = await context.Pick
+                .Where(w => w.SalesItem == true)
+                .OrderByDescending(o => o.DatePicked)
+                .Take(5)
+                .ToArrayAsync();
+
+            var myPicks = await context.Pick
+                .Where(w => w.SalesItem == false)
+                .OrderByDescending(o => o.DatePicked)
+                .ToArrayAsync();
+
+            userIndexLayout.LatestMarketItems = ltMarketItems;
+            userIndexLayout.Picks = myPicks;
+
+            return userIndexLayout;
+        }
 
         public async Task<bool> Login(LoginVM loginVM)
         {
@@ -104,11 +66,12 @@ namespace svAmplifier.Models
         public async Task<bool> RegisterUser(RegisterUserVM registerUserVM)
         {
             //skapa egen användare i tabell(AspUser)
-            var user = new IdentityUser(registerUserVM.UserName);
-
-            //lägger till email+Phonenumber i AspUser
-            user.Email = registerUserVM.Email;
-            user.PhoneNumber = registerUserVM.TelephoneNumber;
+            var user = new IdentityUser(registerUserVM.UserName)
+            {
+                //lägger till email+Phonenumber i AspUser
+                Email = registerUserVM.Email,
+                PhoneNumber = registerUserVM.TelephoneNumber
+            };
 
             var result = await userManager.CreateAsync(user, registerUserVM.Password);
 
@@ -184,6 +147,9 @@ namespace svAmplifier.Models
 
                 //sätter PickID till nyvarande användarens UserID
                 pickItem.UserId = user.Id;
+                pickItem.DatePicked = new DateTime(2017, 12, 08);
+                pickItem.MushroomName = "MushroomTest";
+                pickItem.MushroomPicUrl = "test";
 
                 await context.Pick.AddAsync(pickItem);
                 await context.SaveChangesAsync();
@@ -247,13 +213,5 @@ namespace svAmplifier.Models
             }
         }
 
-    }
-}
-
-
-        //public User[] GetAllUsers()
-        //{
-        //    return users.ToArray();
-        //}
     }
 }

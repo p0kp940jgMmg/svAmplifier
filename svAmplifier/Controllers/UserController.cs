@@ -25,8 +25,7 @@ namespace svAmplifier.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
-            //return Content("logged in as.." + User.Identity.Name);
+            return View(accountRepos.GetUserIndexVM());
         }
 
         //TEST

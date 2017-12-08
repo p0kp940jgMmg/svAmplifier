@@ -5,14 +5,14 @@
     <div class="marketItem" id="">
         <div class="thumbnail">
             <a href="#" title="Go to item">
-                <img src="@item.Mushroom.PicUrl" alt="Lorem ipsum" />
+                <img src="@item.MushroomPicUrl" alt="Lorem ipsum" />
             </a>
         </div>
         <div class="marketInfo">
-            <p>@item.Mushroom.Type</p>
-            <p>@item.SalesAdress.Street @item.SalesAdress.Zipcode @item.SalesAdress.City</p>
-            <p>Vikt: @item.Weight</p>
-            <p>@item.SalesPersonUsername @item.PickDate</p>
+            <p>@item.MushroomName</p>
+            <p>@item.Street @item.Zip @item.City</p>
+            <p>Vikt: @item.WeightInGrams</p>
+            <p>@item.User.Firstname @item.Price</p>
         </div>
     </div>
 }

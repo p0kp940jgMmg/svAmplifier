@@ -1,4 +1,5 @@
-﻿using System;
+﻿using svAmplifier.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,8 +9,8 @@ namespace svAmplifier.Models.VM
     public class UserIndexLayoutVM
     {
 
-        public PickVM[] Picks { get; set; }
-        public MarketItemVM[] LatestMarketItems { get; set; }
+        public Pick[] Picks { get; set; }
+        public Pick[] LatestMarketItems { get; set; }
 
         //public UserIndexLayoutVM()
         //{

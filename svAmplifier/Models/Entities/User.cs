@@ -18,6 +18,7 @@ namespace svAmplifier.Models.Entities
         public string Phonenumber { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
+        public string Username { get; set; }
 
         public ICollection<Pick> Pick { get; set; }
     }
