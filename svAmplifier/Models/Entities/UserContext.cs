@@ -68,10 +68,20 @@ namespace svAmplifier.Models.Entities
                 entity.ToTable("User", "dco");
 
                 entity.HasIndex(e => e.AspNetId)
-                    .HasName("UQ__User__9C3F232A578C4542")
+                    .HasName("UQ__User__9C3F232AD5155025")
                     .IsUnique();
 
+                entity.Property(e => e.AspNetId).IsRequired();
+
                 entity.Property(e => e.City)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Firstname)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Lastname)
                     .HasMaxLength(32)
                     .IsUnicode(false);
 

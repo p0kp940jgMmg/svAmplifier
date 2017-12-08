@@ -16,12 +16,10 @@ namespace svAmplifier.Controllers
     public class HomeController : Controller
     {
         AccountRepository accountRepository;
-        UserContext context;
 
-        public HomeController(AccountRepository accountRepository, UserContext context)
+        public HomeController(AccountRepository accountRepository)
         {
             this.accountRepository = accountRepository;
-            this.context = context;
         }
 
         public IActionResult Success()
@@ -36,9 +34,10 @@ namespace svAmplifier.Controllers
 
         //i formulär: alltid en get och en post. en som visar... 
         [HttpGet]
-        public async Task<IActionResult> Login()            
+        public IActionResult Login()            
         {
-            await accountRepository.RegisterUser(new RegisterUserVM { UserName = "danne", Password="Password_123"});
+            //await accountRepository.RegisterUser(new RegisterUserVM { UserName = "danne", Password="Password_123"});
+
             return View();
         }
 
@@ -57,7 +56,7 @@ namespace svAmplifier.Controllers
                 return View(loginVM);
             }
 
-            return RedirectToAction(nameof(Success));
+            return RedirectToAction("Index", "User");
 
         }
 
@@ -73,8 +72,11 @@ namespace svAmplifier.Controllers
             if (!ModelState.IsValid)
                 return View(registerUserVM);
            
-            if (! await accountRepository.RegisterUser(registerUserVM))
+            if (!await accountRepository.RegisterUser(registerUserVM))
+            {
+                ModelState.AddModelError(nameof(RegisterUserVM.UserName), "Registration failed...");
                 return View(registerUserVM);
+            }
 
             return RedirectToAction(nameof(UserController.Index), "User");
         }

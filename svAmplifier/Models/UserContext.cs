@@ -8,8 +8,8 @@ namespace svAmplifier.Models.Entities
     {
         public UserContext(DbContextOptions<UserContext> c) :base( c)
         {
-
         }
+
 
     }
 }

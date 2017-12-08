@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="2.33.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.19.1" />
+    <PackageReference Include="Selenium.Support" Version="3.8.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.8.0" />
+    <PackageReference Include="Selenium.WebDriver.MicrosoftDriver" Version="16.16299.0" />
     <PackageReference Include="jQuery" Version="3.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">

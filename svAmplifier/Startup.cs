@@ -33,28 +33,31 @@ namespace svAmplifier
 
             var connStringAzure = config.GetConnectionString("connString");
 
-            services.AddDbContext<UserContext>(o => o.UseSqlServer(connStringAzure));
+            services.AddDbContext<UserContext>(
+                o => o.UseSqlServer(connStringAzure));
 
             services.AddDbContext<IdentityDbContext>(
                 o => o.UseSqlServer(connStringAzure));
 
             services.AddTransient<AccountRepository>();
+
             services.AddTransient<UserContext>();
+
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddMvc();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(o => o.LoginPath = "/Home/Login");
 
-            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseDeveloperExceptionPage();
             app.UseAuthentication();
+            app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }

@@ -9,11 +9,15 @@ namespace svAmplifier.Models.VM
     public class MarketItemVM
     {
         [Required]
-        public Mushroom Mushroom { get; set; }
+        public string MushroomName { get; set; }
+        [Required]
+        public string MushroomPicUrl { get; set; }
         [Required]
         public double Price { get; set; }
         public string SalesPersonUsername { get; set; }
-        public Address SalesAdress { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string Zip { get; set; }
         public DateTime PickDate { get; set; }
         public double Weight { get; set; }
     }
