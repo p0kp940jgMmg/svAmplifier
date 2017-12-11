@@ -38,6 +38,7 @@ namespace svAmplifier.Controllers
             return View(new UserIndexLayoutVM());
         }
 
+        [HttpPost]
         public async Task<IActionResult> AddPickItem(Pick pick)
         {
             pick.DatePicked = new DateTime();
@@ -45,13 +46,6 @@ namespace svAmplifier.Controllers
             await accountRepos.AddPick(pick);
 
             return RedirectToAction(nameof(Index));
-        }
-
-        [HttpGet]
-        public IActionResult AddNewPick()
-        {
-            return View();
-            
         }
 
         [HttpPost]
