@@ -43,5 +43,25 @@ namespace svAmplifier.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public IActionResult AddNewPick()
+        {
+            return View();
+            
+        }
+
+        [HttpPost]
+        public IActionResult AddNewPick(NewPickVM newPickVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            //returnerar vyn för userns hela historik. 
+            return RedirectToAction(nameof(MarketItemVM));
+        }
     }
+
+
 }
