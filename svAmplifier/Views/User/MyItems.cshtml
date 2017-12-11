@@ -4,13 +4,13 @@
     Layout = "_Layout";
 }
 
-<div class="marketItemColumn">
+@*<div class="marketItemColumn">
     <a asp-controller="User" asp-action="AddPickItem" class="btn btn-danger btn-round marketItemColumn-btn">New Item</a>
     <h4>My items</h4>
     @{ Html.RenderPartial("MarketPV");}
 </div>
 
-@Model.Message
+@Model.Message*@
 
 <div>
     <form asp-controller="User" asp-action="AddPickItem">
@@ -19,14 +19,12 @@
         <span asp-validation-for="NewPick.MushroomName"></span>
 
         <label asp-for="NewPick.MushroomPicUrl"></label>
-        <input asp-for="NewPick.MushroomPicUrl" type="file"/>
+        <input asp-for="NewPick.MushroomPicUrl" type="file" />
         <span asp-validation-for="NewPick.MushroomPicUrl" type=""></span>
 
-        <label asp-for="NewPick."></label>
-        <select asp-for="NewPick"  asp-items="@NewSelectList(NewPick)"/> 
-        
+        <label asp-for="NewPick"></label>
+        <select asp-for="NewPick" asp-items="@new SelectList(@Model.Mushrooms, " Id", "MushroomName" ))"></select>
 
-   
         <input type="submit" value="ADD ITEM" />
     </form>
 </div>

@@ -16,26 +16,18 @@ namespace svAmplifier.Controllers
     public class UserController : Controller
     {
         AccountRepository accountRepos;
-
         public UserController(AccountRepository accountRepos)
         {
             this.accountRepos = accountRepos;
         }
 
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-
             var model = await accountRepos.GetUserIndexVM();
 
             return View(model);
-        }
-
-        //TEST
-        public IActionResult Test()
-        {
-
-            return View(new UserIndexLayoutVM());
         }
 
         [HttpPost]
@@ -56,15 +48,15 @@ namespace svAmplifier.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost]
-        public IActionResult AddNewPick(NewPickVM newPickVM)
+        [HttpGet]
+        public async Task<IActionResult> MyItems()
         {
-            if (!ModelState.IsValid)
+            MyItemsVM myItems = new MyItemsVM
             {
-                return View();
-            }
-            //returnerar vyn för userns hela historik. 
-            return RedirectToAction(nameof(MarketItemVM));
+                Mushrooms = await accountRepos.GetMushrooms()
+            };
+
+            return View(myItems);
         }
     }
 
