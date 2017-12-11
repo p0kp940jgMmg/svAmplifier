@@ -43,8 +43,16 @@ namespace svAmplifier.Controllers
         {
             pick.DatePicked = new DateTime();
 
-            await accountRepos.AddPick(pick);
+            if (!ModelState.IsValid)
+            {
+                return View(pick);
+            }
 
+            if (!(await accountRepos.AddPick(pick)))
+            {
+                return View("error, couldnt add your item", pick);
+            }
+            //ändra index sen
             return RedirectToAction(nameof(Index));
         }
 
