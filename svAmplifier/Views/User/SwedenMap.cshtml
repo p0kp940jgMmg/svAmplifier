@@ -1,0 +1,24 @@
+﻿@using svAmplifier.Controllers
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gå till område: </title>
+    <link href="~/Styles/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="~/Scripts/jquery-jvectormap-se-merc.js"></script>
+</head>
+<body>
+    <div id="map" style="width: 600px; height: 400px"></div>
+    <script>
+        $(function () {
+            $('#map').vectorMap({
+                map: 'se_merc', onRegionClick: function (event, code) {
+                    let url = "@Url.Action(nameof(UserController.MarketItems), "User")";
+                    window.location.href = url + "/" + code;
+                } });
+        });
+    </script>
+</body>
+</html>
+

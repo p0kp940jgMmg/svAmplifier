@@ -57,6 +57,18 @@ namespace svAmplifier.Controllers
 
             return View(myItems);
         }
+
+        [AllowAnonymous]
+        public IActionResult SwedenMap()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        public IActionResult MarketItems(string id)
+        {
+            return Content(id);
+        }
     }
 
 
