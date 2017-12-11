@@ -10,6 +10,10 @@
   {
     "outputFile": "wwwroot/Styles/User-MyItems.css",
     "inputFile": "Sass/User-MyItems.scss"
+  },
+  {
+    "outputFile": "wwwroot/Styles/User-Market.css",
+    "inputFile": "Sass/User-Market.scss"
   }
 ]
 

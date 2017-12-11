@@ -59,6 +59,8 @@ namespace svAmplifier.Models.Entities
 
                 entity.Property(e => e.Price).HasColumnType("money");
 
+                entity.Property(e => e.Region).HasMaxLength(8);
+
                 entity.Property(e => e.Street)
                     .HasMaxLength(32)
                     .IsUnicode(false);

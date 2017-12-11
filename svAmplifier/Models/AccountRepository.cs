@@ -155,7 +155,7 @@ namespace svAmplifier.Models
                 pickItem.Price = 100;
                 pickItem.WeightInGrams = 1000;
                 pickItem.Username = "UsernameTEST";
-
+                pickItem.Region = "ab";
                 await context.Pick.AddAsync(pickItem);
                 await context.SaveChangesAsync();
 
@@ -238,6 +238,15 @@ namespace svAmplifier.Models
                 .OrderByDescending(o => o.DatePicked)
                 .Take(5)
                 .ToArrayAsync();
+        }
+
+        public async Task<Pick[]> GetMarketItemsForRegion(string theRegion)
+        {
+            return await context.Pick
+                .Where(w => w.SalesItem == true && w.Region == theRegion)
+                .OrderByDescending(o => o.DatePicked)
+                .ToArrayAsync();
+          
         }
 
         //Hämtar alla User picks

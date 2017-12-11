@@ -20,6 +20,7 @@ namespace svAmplifier.Models.Entities
         public bool? SalesItem { get; set; }
         public string Username { get; set; }
         public string Description { get; set; }
+        public string Region { get; set; }
 
         public User User { get; set; }
     }
