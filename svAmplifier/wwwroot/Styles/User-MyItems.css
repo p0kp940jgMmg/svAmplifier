@@ -1,35 +1,17 @@
 ﻿body {
   /*font-family: Arial, Helvetica, sans-serif;*/ }
 
-.userIndexContainer {
-  padding-top: 100px;
-  justify-content: center;
-  flex-direction: row;
-  display: flex; }
-
-.historyItemColumn {
-  padding: 10px 4px 4px 4px;
-  flex-wrap: wrap; }
-  .historyItemColumn h4 {
-    padding: 10px 4px 4px 4px; }
-  .historyItemColumn .historyItem {
-    padding: 2px 7px 4px 4px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    display: flex;
-    width: 500px;
-    color: black;
-    background-color: white; }
-    .historyItemColumn .historyItem .thumbnail .map {
-      height: 150px;
-      width: 150px; }
-
 .marketItemColumn {
   padding: 78px 4px 4px 4px;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center; }
+  .marketItemColumn .contact-form {
+    display: flex;
+    padding-top: 50px; }
   .marketItemColumn .marketItem {
     padding: 2px 7px 4px 4px;
     border: solid;
+    justify-content: center;
     border-width: 1px;
     border-color: black;
     flex-wrap: wrap;

@@ -38,16 +38,9 @@ namespace svAmplifier.Models
         {
             UserIndexLayoutVM userIndexLayout = new UserIndexLayoutVM();
 
-            var ltMarketItems = await context.Pick
-                .Where(w => w.SalesItem == true)
-                .OrderByDescending(o => o.DatePicked)
-                .Take(5)
-                .ToArrayAsync();
+            var ltMarketItems = await GetMarketItems();
 
-            var myPicks = await context.Pick
-                .Where(w => w.SalesItem == false)
-                .OrderByDescending(o => o.DatePicked)
-                .ToArrayAsync();
+            var myPicks = await GetUserPicks();
 
             userIndexLayout.LatestMarketItems = ltMarketItems;
             userIndexLayout.Picks = myPicks;
@@ -92,7 +85,8 @@ namespace svAmplifier.Models
                     Zipcode = registerUserVM.Zipcode,
                     Phonenumber = registerUserVM.TelephoneNumber,
                     Firstname = registerUserVM.FirstName,
-                    Lastname = registerUserVM.LastName
+                    Lastname = registerUserVM.LastName,
+                    Username = registerUserVM.UserName
                 });
 
                 await context.SaveChangesAsync();
@@ -148,6 +142,7 @@ namespace svAmplifier.Models
 
                 //sätter PickID till nyvarande användarens UserID
                 pickItem.UserId = user.Id;
+                pickItem.Username = user.Username;
                 pickItem.DatePicked = new DateTime(2017, 12, 08);
                 pickItem.MushroomName = "MushroomTest";
                 pickItem.MushroomPicUrl = "test";
@@ -225,13 +220,50 @@ namespace svAmplifier.Models
 
         public async Task<MyItemsVM> GetMushrooms()
         {
-            MyItemsVM myItemsVM = new MyItemsVM {
+            MyItemsVM myItemsVM = new MyItemsVM
+            {
                 Mushrooms = await context.Mushrooms
-                .Select(m=> new SelectListItem { Text = m.MushroomName, Value = m.Id.ToString()})
+                .Select(m => new SelectListItem { Text = m.MushroomName, Value = m.Id.ToString() })
                 .ToArrayAsync()
             };
 
             return myItemsVM;
+        }
+
+        //Hämtar de 5 senaste Market Items
+        public async Task<Pick[]> GetMarketItems()
+        {
+            return await context.Pick
+                .Where(w => w.SalesItem == true)
+                .OrderByDescending(o => o.DatePicked)
+                .Take(5)
+                .ToArrayAsync();
+        }
+
+        //Hämtar alla User picks
+        public async Task<Pick[]> GetUserPicks()
+        {
+            return await context.Pick
+                .Where(w => w.SalesItem == false && w.UserId == GetCurrentUserId())
+                .OrderByDescending(o => o.DatePicked)
+                .ToArrayAsync();
+        }
+
+        //Hämtar alla User Market Items
+        public async Task<Pick[]> GetUsersMarketItems()
+        {
+            return await context.Pick
+                .Where(w => w.SalesItem == true && w.UserId == GetCurrentUserId())
+                .OrderByDescending(o => o.DatePicked)
+                .ToArrayAsync();
+        }
+
+        public int GetCurrentUserId()
+        {
+            var aspUserId = userManager.GetUserId(contextAccessor.HttpContext.User);
+
+            return context.User
+                .FirstOrDefaultAsync(w => w.AspNetId == aspUserId).Id;
         }
     }
 }

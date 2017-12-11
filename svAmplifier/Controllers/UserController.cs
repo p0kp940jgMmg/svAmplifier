@@ -52,8 +52,7 @@ namespace svAmplifier.Controllers
         public async Task<IActionResult> MyItems()
         {
             MyItemsVM myItems = await accountRepos.GetMushrooms();
-
-
+            myItems.MyMarketItems = await accountRepos.GetMarketItems();
 
             return View(myItems);
         }

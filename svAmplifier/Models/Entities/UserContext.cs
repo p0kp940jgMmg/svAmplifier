@@ -57,10 +57,6 @@ namespace svAmplifier.Models.Entities
                     .HasMaxLength(32)
                     .IsUnicode(false);
 
-                entity.Property(e => e.MushroomPicUrl)
-                    .HasMaxLength(128)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Price).HasColumnType("money");
 
                 entity.Property(e => e.Street)

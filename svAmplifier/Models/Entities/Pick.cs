@@ -19,6 +19,7 @@ namespace svAmplifier.Models.Entities
         public string Zip { get; set; }
         public bool? SalesItem { get; set; }
         public string Username { get; set; }
+        public string Description { get; set; }
 
         public User User { get; set; }
     }

@@ -1,9 +1,10 @@
-﻿@model UserIndexLayoutVM
+﻿@model MyItemsVM
 
-@foreach (var item in Model.LatestMarketItems)
+
+@foreach (var item in Model.MyMarketItems)
 {
 
-    <div class="marketItem" id="@item.Id">
+    <div class="marketItem" id="@item.">
         <div class="thumbnail">
             <a href="#" title="Go to item">
                 <img src="@item.MushroomPicUrl" alt="Lorem ipsum" />
@@ -13,9 +14,8 @@
             <p>@item.MushroomName</p>
             <p>@item.Street @item.Zip @item.City</p>
             <p>Vikt: @item.WeightInGrams</p>
-            <p>@item.Username @item.Price</p>
+            <p>@item.Price</p>
         </div>
     </div>
 
 }
-

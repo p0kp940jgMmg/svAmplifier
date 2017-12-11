@@ -18,7 +18,7 @@ namespace svAmplifier.Models.VM
         public string City { get; set; }
         public string Street { get; set; }
         public string Zip { get; set; }
-        //public Address SalesAdress { get; set; /*}*/
+        public int Id { get; set; }
         public DateTime PickDate { get; set; }
         public double Weight { get; set; }
     }

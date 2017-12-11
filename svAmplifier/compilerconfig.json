@@ -6,5 +6,15 @@
   {
     "outputFile": "wwwroot/Styles/User-Index.css",
     "inputFile": "Sass/User-Index.scss"
+  },
+  {
+    "outputFile": "wwwroot/Styles/User-MyItems.css",
+    "inputFile": "Sass/User-MyItems.scss"
   }
 ]
+
+
+
+
+
+

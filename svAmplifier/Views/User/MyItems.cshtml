@@ -3,23 +3,14 @@
 @{
     Layout = "_Layout";
 }
-
-@*<div class="marketItemColumn">
-    <a asp-controller="User" asp-action="AddPickItem" class="btn btn-danger btn-round marketItemColumn-btn">New Item</a>
-    <h4>My items</h4>
-    @{ Html.RenderPartial("MarketPV");}
-</div>
-
-@Model.Message*@
-
-<div>
+<div class="contact-form">
     <form asp-controller="User" asp-action="AddPickItem">
         <label asp-for="NewPick.MushroomName">MushroomName</label>
         <input asp-for="NewPick.MushroomName" />
         <span asp-validation-for="NewPick.MushroomName"></span>
 
         <label asp-for="NewPick.MushroomPicUrl"></label>
-        <input asp-for="NewPick.MushroomPicUrl" type="file" />
+        <input asp-for="NewPick.MushroomPicUrl" />
         <span asp-validation-for="NewPick.MushroomPicUrl" type=""></span>
 
         <label asp-for="NewPick.MushroomName"></label>
@@ -30,3 +21,18 @@
         <input type="submit" value="ADD ITEM"><input />
     </form>
 </div>
+
+<div class="marketItemColumn">
+    <a asp-controller="User" asp-action="AddPickItem" class="btn btn-danger btn-round marketItemColumn-btn">New Item</a>
+    <h4>My items</h4>
+    @{ Html.RenderPartial("UserItemPV");}
+</div>
+
+@*@Model.Message*@
+
+
+@section scripts{
+    <script src="~/Scripts/UserIndexJavaScript.js"></script>
+    <link href="~/Styles/User-Index.min.css" rel="stylesheet" />
+    <link href="~/Styles/TestStyleSheet.css" rel="stylesheet" />
+}
