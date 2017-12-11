@@ -10,6 +10,7 @@ using svAmplifier.Models.VM;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace svAmplifier.Models
 {
@@ -222,11 +223,15 @@ namespace svAmplifier.Models
             }
         }
 
-        public async Task<Mushrooms[]> GetMushrooms()
+        public async Task<MyItemsVM> GetMushrooms()
         {
-            Mushrooms[] mushrooms = await context.Mushrooms.ToArrayAsync();
+            MyItemsVM myItemsVM = new MyItemsVM {
+                Mushrooms = await context.Mushrooms
+                .Select(m=> new SelectListItem { Text = m.MushroomName, Value = m.Id.ToString()})
+                .ToArrayAsync()
+            };
 
-            return mushrooms;
+            return myItemsVM;
         }
     }
 }

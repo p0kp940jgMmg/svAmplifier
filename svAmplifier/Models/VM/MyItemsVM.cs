@@ -1,4 +1,5 @@
-﻿using svAmplifier.Models.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using svAmplifier.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace svAmplifier.Models.VM
 		public Pick[] MyMarketItems { get; set; }
 		public string Message { get; set; } = "Couldnt add ur pick";
 		public Pick NewPick { get; set; }
-        public Mushrooms[] Mushrooms { get; set; }
+        public SelectListItem[] Mushrooms { get; set; }
+        public int SelectedMushID { get; set; }
     }
 }

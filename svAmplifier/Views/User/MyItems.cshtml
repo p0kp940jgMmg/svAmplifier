@@ -22,9 +22,11 @@
         <input asp-for="NewPick.MushroomPicUrl" type="file" />
         <span asp-validation-for="NewPick.MushroomPicUrl" type=""></span>
 
-        <label asp-for="NewPick"></label>
-        <select asp-for="NewPick" asp-items="@new SelectList(@Model.Mushrooms, " Id", "MushroomName" ))"></select>
+        <label asp-for="NewPick.MushroomName"></label>
+        <select asp-for="NewPick.MushroomName"
+                asp-items="Model.Mushrooms"></select>
+        <span asp-validation-for="NewPick.MushroomName" type=""></span>
 
-        <input type="submit" value="ADD ITEM" />
+        <input type="submit" value="ADD ITEM"><input />
     </form>
 </div>

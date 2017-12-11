@@ -22,11 +22,6 @@ namespace svAmplifier.Controllers
             this.accountRepository = accountRepository;
         }
 
-        public IActionResult Success()
-        {
-            return View();
-        }
-
         public IActionResult Index()
         {
             return View();
@@ -36,8 +31,6 @@ namespace svAmplifier.Controllers
         [HttpGet]
         public IActionResult Login()            
         {
-            //await accountRepository.RegisterUser(new RegisterUserVM { UserName = "danne", Password="Password_123"});
-
             return View();
         }
 

@@ -51,10 +51,9 @@ namespace svAmplifier.Controllers
         [HttpGet]
         public async Task<IActionResult> MyItems()
         {
-            MyItemsVM myItems = new MyItemsVM
-            {
-                Mushrooms = await accountRepos.GetMushrooms()
-            };
+            MyItemsVM myItems = await accountRepos.GetMushrooms();
+
+
 
             return View(myItems);
         }
