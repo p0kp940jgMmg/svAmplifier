@@ -222,5 +222,11 @@ namespace svAmplifier.Models
             }
         }
 
+        public async Task<Mushrooms[]> GetMushrooms()
+        {
+            Mushrooms[] mushrooms = await context.Mushrooms.ToArrayAsync();
+
+            return mushrooms;
+        }
     }
 }

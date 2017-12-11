@@ -6,6 +6,7 @@ namespace svAmplifier.Models.Entities
 {
     public partial class UserContext : DbContext
     {
+        public virtual DbSet<Mushrooms> Mushrooms { get; set; }
         public virtual DbSet<Pick> Pick { get; set; }
         public virtual DbSet<User> User { get; set; }
 
@@ -20,6 +21,19 @@ namespace svAmplifier.Models.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Mushrooms>(entity =>
+            {
+                entity.ToTable("Mushrooms", "dco");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.MushroomName)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MushroomPicUrl).IsRequired();
+            });
+
             modelBuilder.Entity<Pick>(entity =>
             {
                 entity.ToTable("Pick", "dco");

@@ -16,26 +16,18 @@ namespace svAmplifier.Controllers
     public class UserController : Controller
     {
         AccountRepository accountRepos;
-
         public UserController(AccountRepository accountRepos)
         {
             this.accountRepos = accountRepos;
         }
 
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-
             var model = await accountRepos.GetUserIndexVM();
 
             return View(model);
-        }
-
-        //TEST
-        public IActionResult Test()
-        {
-
-            return View(new UserIndexLayoutVM());
         }
 
         [HttpPost]
@@ -56,6 +48,16 @@ namespace svAmplifier.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> MyItems()
+        {
+            MyItemsVM myItems = new MyItemsVM
+            {
+                Mushrooms = await accountRepos.GetMushrooms()
+            };
+
+            return View(myItems);
+        }
     }
 
 
