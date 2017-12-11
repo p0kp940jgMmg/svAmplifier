@@ -142,14 +142,23 @@ namespace svAmplifier.Models
                 var userAspId = userManager.GetUserId(contextAccessor.HttpContext.User);
 
                 //Hämtar nuvarande användarens User med AspID
-                User user = context.User
-                    .FirstOrDefault(u => u.AspNetId == userAspId);
+                User user = await context.User
+                    .FirstOrDefaultAsync(u => u.AspNetId == userAspId);
 
                 //sätter PickID till nyvarande användarens UserID
                 pickItem.UserId = user.Id;
                 pickItem.DatePicked = new DateTime(2017, 12, 08);
                 pickItem.MushroomName = "MushroomTest";
                 pickItem.MushroomPicUrl = "test";
+                pickItem.Latitude = "59.36004";
+                pickItem.Longitude = "18.00086";
+                pickItem.SalesItem = false;
+                pickItem.City = "TEST";
+                pickItem.Street = "TEST";
+                pickItem.Zip = "TEST";
+                pickItem.Price = 100;
+                pickItem.WeightInGrams = 1000;
+                pickItem.Username = "UsernameTEST";
 
                 await context.Pick.AddAsync(pickItem);
                 await context.SaveChangesAsync();

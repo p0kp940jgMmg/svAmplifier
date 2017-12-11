@@ -23,9 +23,12 @@ namespace svAmplifier.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(accountRepos.GetUserIndexVM());
+
+            var model = await accountRepos.GetUserIndexVM();
+
+            return View(model);
         }
 
         //TEST

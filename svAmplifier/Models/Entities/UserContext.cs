@@ -53,6 +53,10 @@ namespace svAmplifier.Models.Entities
                     .HasMaxLength(32)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Username)
+                    .HasMaxLength(32)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Zip)
                     .HasMaxLength(32)
                     .IsUnicode(false);
