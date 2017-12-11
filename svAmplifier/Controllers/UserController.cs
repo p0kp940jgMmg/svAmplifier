@@ -38,12 +38,22 @@ namespace svAmplifier.Controllers
             return View(new UserIndexLayoutVM());
         }
 
+        
+        [HttpPost]
         public async Task<IActionResult> AddPickItem(Pick pick)
         {
             pick.DatePicked = new DateTime();
 
-            await accountRepos.AddPick(pick);
+            if (!ModelState.IsValid)
+            {
+                return View(pick);
+            }
 
+            if (!(await accountRepos.AddPick(pick)))
+            {
+                return View("error, couldnt add your item", pick);
+            }
+            //ändra index sen
             return RedirectToAction(nameof(Index));
         }
 
