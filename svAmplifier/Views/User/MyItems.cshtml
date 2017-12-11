@@ -3,36 +3,61 @@
 @{
     Layout = "_Layout";
 }
-<div class="contact-form">
-    <form asp-controller="User" asp-action="AddPickItem">
-        <label asp-for="NewPick.MushroomName">MushroomName</label>
-        <input asp-for="NewPick.MushroomName" />
-        <span asp-validation-for="NewPick.MushroomName"></span>
-
-        <label asp-for="NewPick.MushroomPicUrl"></label>
-        <input asp-for="NewPick.MushroomPicUrl" />
-        <span asp-validation-for="NewPick.MushroomPicUrl" type=""></span>
-
-        <label asp-for="NewPick.MushroomName"></label>
-        <select asp-for="NewPick.MushroomName"
-                asp-items="Model.Mushrooms"></select>
-        <span asp-validation-for="NewPick.MushroomName" type=""></span>
-
-        <input type="submit" value="ADD ITEM"><input />
-    </form>
-</div>
-
 <div class="marketItemColumn">
-    <a asp-controller="User" asp-action="AddPickItem" class="btn btn-danger btn-round marketItemColumn-btn">New Item</a>
+    <a id="addNewItem" class="btn btn-danger btn-round marketItemColumn-btn">New Item</a>
+    <div class="contact-form">
+        <form asp-controller="User" asp-action="AddPickItem">
+            <label asp-for="NewPick.MushroomName"></label>
+            <select asp-for="NewPick.MushroomName"
+                    asp-items="Model.Mushrooms"></select>
+            <span asp-validation-for="NewPick.MushroomName" type=""></span>
+            <br />
+
+            <label asp-for="NewPick.MushroomPicUrl"></label>
+            <input asp-for="NewPick.MushroomPicUrl" />
+            <span asp-validation-for="NewPick.MushroomPicUrl" type=""></span>
+            <br />
+
+            <label asp-for="NewPick.DatePicked"></label>
+            <input type="datetime-local" asp-for="NewPick.DatePicked" />
+            <span asp-validation-for="NewPick.DatePicked"></span>
+            <br />
+            <label asp-for="NewPick.Price"></label>
+            <input asp-for="NewPick.Price" />
+            <span asp-validation-for="NewPick.Price"></span>
+            @*<br />
+        <label asp-for="NewPick.Region"></label>
+        <input asp-for="NewPick.Region" />
+        <span asp-validation-for="NewPick.Region"></span>*@
+            <br />
+            <label asp-for="NewPick.WeightInGrams"></label>
+            <input asp-for="NewPick.WeightInGrams" />
+            <span asp-validation-for="NewPick.WeightInGrams"></span>
+            <br />
+            <label asp-for="NewPick.City"></label>
+            <input asp-for="NewPick.City" />
+            <span asp-validation-for="NewPick.City"></span>
+            <br />
+            <label asp-for="NewPick.Description"></label>
+            <textarea name="NewPick.Description"
+                      data-val-required="The Description field is required."
+                      data-val-maxlength-max="5000"
+                      data-val-maxlength="The field Description must be a string or array type with a maximum length of '5000'."
+                      data-val="true"></textarea>
+            <span asp-validation-for="NewPick.Description"></span>
+            <br />
+
+
+            <input type="submit" value="ADD ITEM" />
+        </form>
+    </div>
     <h4>My items</h4>
     @{ Html.RenderPartial("UserItemPV");}
 </div>
 
-@*@Model.Message*@
-
-
 @section scripts{
     <script src="~/Scripts/UserIndexJavaScript.js"></script>
-    <link href="~/Styles/User-Index.min.css" rel="stylesheet" />
+    <script src="~/Scripts/MyItemsJS.js"></script>
     <link href="~/Styles/TestStyleSheet.css" rel="stylesheet" />
+    <link href="~/Styles/User-MyItems.css" rel="stylesheet" />
 }

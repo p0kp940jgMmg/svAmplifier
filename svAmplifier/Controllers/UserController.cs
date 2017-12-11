@@ -45,7 +45,7 @@ namespace svAmplifier.Controllers
                 return View("error, couldnt add your item", pick);
             }
             //ändra index sen
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(MyItems));
         }
 
         [HttpGet]
