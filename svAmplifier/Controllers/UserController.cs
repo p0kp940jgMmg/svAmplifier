@@ -58,16 +58,27 @@ namespace svAmplifier.Controllers
         }
 
         [AllowAnonymous]
+        [HttpGet]
         public IActionResult SwedenMap()
         {
             return View();
         }
 
+        //[HttpPost]
+        //public IActionResult SwedenMap(string id)
+        //{
+        //    return RedirectToAction(nameof("market"), id);
+        //}
+
         [AllowAnonymous]
-        public IActionResult MarketItems(string id)
+        public IActionResult Market(string id)
         {
-            return Content(id);
+
+            Task<Pick[]> marketItemVM = accountRepos.GetMarketItems(); 
+            return View(id, marketItemVM);
+           
         }
+        
     }
 
 
