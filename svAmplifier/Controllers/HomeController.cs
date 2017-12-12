@@ -22,6 +22,7 @@ namespace svAmplifier.Controllers
             this.accountRepository = accountRepository;
         }
 
+        [Route("foo")]
         public IActionResult Index()
         {
             return View();
@@ -49,7 +50,7 @@ namespace svAmplifier.Controllers
                 return View(loginVM);
             }
 
-            return RedirectToAction("Index", "User");
+            return RedirectToAction(nameof(UserController.Index), "User");
 
         }
 

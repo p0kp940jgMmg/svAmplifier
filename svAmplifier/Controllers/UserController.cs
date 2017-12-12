@@ -12,7 +12,7 @@ using svAmplifier.Models.VM;
 
 namespace svAmplifier.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class UserController : Controller
     {
         AccountRepository accountRepos;
@@ -31,20 +31,20 @@ namespace svAmplifier.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddPickItem(Pick pick)
+        public async Task<IActionResult> AddPickItem(MyItemsVM pick)
         {
-            pick.DatePicked = new DateTime();
 
             if (!ModelState.IsValid)
             {
+                return RedirectToAction(nameof(MyItems), pick);
+            }
+
+            if (!(await accountRepos.AddPick(pick.NewPick)))
+            {
+                pick.Message = "Error!, we couldn't add your item";
                 return View(pick);
             }
 
-            if (!(await accountRepos.AddPick(pick)))
-            {
-                return View("error, couldnt add your item", pick);
-            }
-            //ändra index sen
             return RedirectToAction(nameof(MyItems));
         }
 

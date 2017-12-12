@@ -6,6 +6,8 @@
 <div class="marketItemColumn">
     <a id="addNewItem" class="btn btn-danger btn-round marketItemColumn-btn">New Item</a>
     <div class="contact-form">
+
+
         <form asp-controller="User" asp-action="AddPickItem">
             <label asp-for="NewPick.MushroomName"></label>
             <select asp-for="NewPick.MushroomName"
@@ -26,9 +28,9 @@
             <input asp-for="NewPick.Price" />
             <span asp-validation-for="NewPick.Price"></span>
             @*<br />
-        <label asp-for="NewPick.Region"></label>
-        <input asp-for="NewPick.Region" />
-        <span asp-validation-for="NewPick.Region"></span>*@
+                <label asp-for="NewPick.Region"></label>
+                <input asp-for="NewPick.Region" />
+                <span asp-validation-for="NewPick.Region"></span>*@
             <br />
             <label asp-for="NewPick.WeightInGrams"></label>
             <input asp-for="NewPick.WeightInGrams" />
@@ -40,17 +42,19 @@
             <br />
             <label asp-for="NewPick.Description"></label>
             <textarea name="NewPick.Description"
-                      data-val-required="The Description field is required."
                       data-val-maxlength-max="5000"
                       data-val-maxlength="The field Description must be a string or array type with a maximum length of '5000'."
                       data-val="true"></textarea>
             <span asp-validation-for="NewPick.Description"></span>
             <br />
 
-
             <input type="submit" value="ADD ITEM" />
         </form>
     </div>
+    @if (Model.Message != null && Model.Message != "")
+    {
+        <h4>@Model.Message</h4>
+    }
     <h4>My items</h4>
     @{ Html.RenderPartial("UserItemPV");}
 </div>
