@@ -74,13 +74,28 @@ namespace svAmplifier.Controllers
         public async Task<IActionResult> Market(string id)
         {
             var picks = await accountRepos.GetMarketItemsForRegion(id);
-            MarketPickVM marketItemVM = new MarketPickVM {
+            MarketPickVM marketItemVM = new MarketPickVM
+            {
                 MarketItems = picks
             };
             return View(marketItemVM);
-           
+
         }
-        
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult UpdateUserInfo()
+        {
+            return View();
+        }
+
+        //[AllowAnonymous]
+        //[HttpPost]
+        //public IActionResult UpdateUserInfo()
+        //{
+        //    return Content("Success");
+        //}
+
     }
 
 
