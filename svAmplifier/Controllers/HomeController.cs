@@ -22,7 +22,6 @@ namespace svAmplifier.Controllers
             this.accountRepository = accountRepository;
         }
 
-        [Route("foo")]
         public IActionResult Index()
         {
             return View();

@@ -12,7 +12,7 @@ using svAmplifier.Models.VM;
 
 namespace svAmplifier.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class UserController : Controller
     {
         AccountRepository accountRepos;
