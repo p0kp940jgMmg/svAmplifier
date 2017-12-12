@@ -2,45 +2,21 @@
 @{
     Layout = "_Layout";
 }
-    <div id="mainMarketDiv">
-        @foreach (var item in Model.MarketItems)
-        {
-            var counter = 1;
-            if (counter % 2 != 0)
+
+@foreach (var item in Model.MarketItems)
             {
-                <div id="leftItemsDiv">
-                    <div class="thumbnail">
-                        <a href="#" title="Go to item">
-                            <img src="@item.MushroomPicUrl" alt="Lorem ipsum" />
-                        </a>
-                    </div>
-                    <div class="marketInfo">
-                        <p>@item.MushroomName</p>
-                        <p>@item.Street @item.Zip @item.City</p>
-                        <p>Vikt: @item.WeightInGrams</p>
-                        <p>@item.Username @item.Price</p>
-                    </div>
-                </div>
-            }
-            else
-            {
-                <div id="rightItemsDiv">
-                    <div class="thumbnail">
-                        <a href="#" title="Go to item">
-                            <img src="@item.MushroomPicUrl" alt="Lorem ipsum" />
-                        </a>
-                    </div>
-                    <div class="marketInfo">
-                        <p>@item.MushroomName</p>
-                        <p>@item.Street @item.Zip @item.City</p>
-                        <p>Vikt: @item.WeightInGrams</p>
-                        <p>@item.Username @item.Price</p>
-                    </div>
-                 </div>
-            }
-            counter++;
-        }
-      </div>
+    <div class="thumbnail">
+        <a href="#" title="Go to item">
+            <img src="@item.MushroomPicUrl" alt="Lorem ipsum" />
+        </a>
+
+        <p>@item.MushroomName</p>
+        <p>@item.Street @item.Zip @item.City</p>
+        <p>Vikt: @item.WeightInGrams</p>
+        <p>@item.Username @item.Price</p>
+    </div>
+}
+
 @section scripts{
-<link href="~/Styles/User-Market.css" rel="stylesheet" />
+    <link href="~/Styles/User-Market.css" rel="stylesheet" />
 }
