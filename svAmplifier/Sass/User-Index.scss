@@ -15,10 +15,16 @@ body {
     display: flex;
 }
 
+.userIndexGutter{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 
 .historyItemColumn {
     padding: 10px 4px 4px 4px;
     flex-wrap: wrap;
+    width: 500px;
 
     h4 {
         padding: 10px 4px 4px 4px;
