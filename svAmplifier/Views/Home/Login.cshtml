@@ -14,27 +14,29 @@
             </div>
             <div class="col-md-6 right-side">
                 <form asp-controller="Home" asp-action="Login">
-                    <label asp-for="Email"></label>
-                    <input asp-for="Email" />
-                    <span asp-validation-for="Email"></span>
-
-                    <label asp-for="Password"></label>
-                    <input asp-for="Password" />
-                    <span asp-validation-for="Password" type="password"></span>
-
-                    <br />
-                    <input type="submit" value="Login" />
+                    <span class="input input--hoshi">
+                        <input asp-for="Email" class="input__field input__field--hoshi" type="text" id="email" />
+                        <label asp-for="Email" class="input__label input__label--hoshi input__label--hoshi-color-3" for="email">
+                            <span asp-validation-for="Email" class="input__label-content input__label-content--hoshi"  >E-mail</span>
+                        </label>
+                    </span>
+                    <span class="input input--hoshi">
+                        <input asp-for="Password" class="input__field input__field--hoshi" type="password" id="password" />
+                        <label asp-for="Password" class="input__label input__label--hoshi input__label--hoshi-color-3" for="password">
+                            <span asp-validation-for="Password" asp-for="Password" class="input__label-content input__label-content--hoshi">Password</span>
+                        </label>
+                    </span>
+                    <div class="cta"/>
+                        <input type="submit" value="Login" class="btn btn-primary pull-left" />
                 </form>
             </div>
             <ul class="social list-inline">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Linkedin</a></li>
+                <li><a href="www.facebook.com">Facebook</a></li>
+                <li><a href="www.twitter.com">Twitter</a></li>
+                <li><a href="www.linkedin.com">Linkedin</a></li>
             </ul>
         </div>
     </div>
 </div>
-</div> <!-- end #main-wrapper -->
+<!-- end #main-wrapper -->
 <!-- Scripts -->
-<script src="js/scripts.js"></script>
-<script src="js/classie.js"></script>
