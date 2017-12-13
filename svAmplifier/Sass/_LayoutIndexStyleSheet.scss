@@ -1,7 +1,11 @@
-﻿$red: #F37272; //knappen
-$red2: #f90101;
+﻿$red: #F99C04;
+$button: #F99C04; //stora knappen
+$icons: white; //ikoner
+$hoverColor: black;
 $brown: #584E4A; //bakgrunden
 $whitey: #ffffff; //förgrunden
+$shazamBild: "http://www.wallpaperbetter.com/wallpaper/981/242/403/green-dark-forest-hd-1080P-wallpaper.jpg";
+$btnColor: white;
 
 $snap: cubic-bezier(1.000, 0.005, 0.240, 1.000);
 $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
@@ -14,13 +18,12 @@ html,
 body {
     height: 100%;
     overflow: hidden;
-
 }
 
 .page {
     height: 100%;
-    background-color: $brown;
-    background-image: url(http://sandvikssamfallighet.se/index-filer/Kartor/Bilder/Sandvik.gif);
+    /*background-color: $brown;*/
+    background-image: url($shazamBild);
 }
 
 .content {
@@ -30,7 +33,9 @@ body {
     transition: transform .7s $snap;
     // styling
     background-color: $whitey;
+    /*background-image: url(http://sandvikssamfallighet.se/index-filer/Kartor/Bilder/Sandvik.gif);*/
     font-family: 'Times New Roman';
+    padding: 5px 5px 5px 5px;
 }
 
 //danne
@@ -44,8 +49,9 @@ body {
     overflow-y: auto; // set expected overflow
     // styling
     padding: 50px 20%;
-
-
+    /*border: solid;*/
+    border-radius: 0.5px;
+    border-bottom-color: black;
 }
 
 /* basically all styling from now on */
@@ -58,7 +64,7 @@ body {
     cursor: pointer;
     width: 100px;
     height: 80px;
-    background-color: gray;
+    background-color: $button;
     border-bottom-right-radius: 100%;
 
     &:active {
@@ -68,7 +74,7 @@ body {
     }
 
     i {
-        color: $red2;
+        color: $icons;
     }
 
     .menu_open,
@@ -121,14 +127,14 @@ body {
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: darken($whitey, 30%);
+        color: $btnColor;
         transition: color .2s;
 
         .icon {
             position: relative;
             display: inline-block;
             margin-right: 25px;
-            color: dimgrey;
+            color: $btnColor;
 
             &:after {
                 position: absolute;
@@ -141,24 +147,24 @@ body {
                 margin-left: -33px;
                 margin-top: -32px;
                 border-radius: 100%;
-                border: 2px solid $whitey;
+                border: 2px solid $icons;
                 transition: border-color .2s;
             }
         }
 
         &:hover {
-            color: $whitey;
+            color: $hoverColor;
 
             .icon {
                 &:after {
-                    border-color: $red2;
+                    border-color: $hoverColor;
                 }
             }
         }
 
         &:active {
             .icon {
-                color: $red2;
+                color: $icons;
             }
         }
     }
@@ -168,7 +174,7 @@ body {
 /* Let's open up the menu */
 .shazam {
     background-color: #f37272;
-    background-image: url(http://sandvikssamfallighet.se/index-filer/Kartor/Bilder/Sandvik.gif);
+    background-image: url($shazamBild);
 
     .content {
         transform: rotate(-30deg);
@@ -208,12 +214,9 @@ body {
 h1 {
     padding-bottom: 15px;
     border-bottom: 1px solid #ddd;
-    font-family:Arial;
+    font-family: Arial;
 }
 
-body {
-    /*color: $red2;*/
-}
 
 .container1 {
     display: flex;
