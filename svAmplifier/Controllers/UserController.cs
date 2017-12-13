@@ -113,6 +113,21 @@ namespace svAmplifier.Controllers
         {
             return View(msg);
         }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult UpdateUserInfo()
+        {
+            return View();
+        }
+
+        //[AllowAnonymous]
+        //[HttpPost]
+        //public IActionResult UpdateUserInfo()
+        //{
+        //    return Content("Success");
+        //}
+
     }
 
 
