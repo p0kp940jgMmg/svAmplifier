@@ -54,6 +54,11 @@ namespace svAmplifier.Controllers
                 pick.MyItems.NewPick.Latitude = cordArr[0];
                 pick.MyItems.NewPick.Longitude = cordArr[1];
             }
+            else
+            {
+                pick.MyItems.NewPick.Latitude = "59.36135710000001";
+                pick.MyItems.NewPick.Longitude = "17.996267699999976";
+            }
 
             if (!(await accountRepos.AddPick(pick.MyItems.NewPick)))
             {
@@ -121,7 +126,7 @@ namespace svAmplifier.Controllers
         public async Task<IActionResult> UpdateUserInfo(EditUserInfoVM edit)
         {
 
-            
+
             if (!(await accountRepos.UpdateUser(edit)))
             {
                 string msg = "Error!, we couldn't update user info";
@@ -138,7 +143,7 @@ namespace svAmplifier.Controllers
         {
             if (await accountRepos.Logout())
             {
-            return RedirectToAction(nameof(Index), "Home");
+                return RedirectToAction(nameof(Index), "Home");
             }
             else
             {

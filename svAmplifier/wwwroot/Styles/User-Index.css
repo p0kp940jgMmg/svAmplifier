@@ -66,6 +66,20 @@ body {
     .marketItemColumn .marketItem .marketInfo {
       /*border-radius: 25px;*/
       border: 2px solid #139cf7; }
+      .marketItemColumn .marketItem .marketInfo .marketItem-btn2 {
+        padding: 0px 5px 0px 5px;
+        outline: none;
+        border-radius: 20%;
+        background: #ffab0f;
+        color: white;
+        font-size: 24px;
+        /* display: block; */
+        position: relative;
+        left: 150%;
+        bottom: -20px;
+        top: auto;
+        /* margin-left: -25px; */
+        /* transition: transform 0.25s; */ }
       .marketItemColumn .marketItem .marketInfo p {
         /*font-family: Arial, Helvetica, sans-serif;*/ }
 

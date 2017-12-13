@@ -149,6 +149,13 @@ namespace svAmplifier.Models
                 //sätter PickID till nyvarande användarens UserID
                 pickItem.UserId = GetCurrentUserId();
                 pickItem.Username = GetCurrentUser().Username;
+                var mushroom = await GetMushroom(Convert.ToInt32(pickItem.MushroomName));
+                pickItem.MushroomName = mushroom.MushroomName;
+                pickItem.MushroomPicUrl = mushroom.MushroomPicUrl;
+
+                var region = await GetRegionCode(Convert.ToInt32(pickItem.Region));
+                string regionTrim = region.RegionId.Trim();
+                pickItem.Region = regionTrim;
 
                 //pickItem.Region = "AB-SE";
                 //pickItem.DatePicked = new DateTime(2017, 12, 08);
@@ -176,6 +183,7 @@ namespace svAmplifier.Models
             }
 
         }
+
 
         public async Task<bool> RemovePick(int pickItemID)
         {
@@ -298,6 +306,19 @@ namespace svAmplifier.Models
             //Får inte vara Async, User blir null
             return context.User
                 .FirstOrDefault(w => w.AspNetId == aspUserId);
+        }
+
+        private Task<Mushrooms> GetMushroom(int id)
+        {
+            return context.Mushrooms
+                .FirstOrDefaultAsync(w => w.Id == id);
+        }
+
+
+        private Task<Regions> GetRegionCode(int code)
+        {
+            return context.Regions
+                .FirstOrDefaultAsync(f => f.Id == code);
         }
     }
 }
