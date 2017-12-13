@@ -24,30 +24,24 @@ function initMap() {
 
 
 //Klicka utanför forms för att hidea Diven
-$("#pickWrap div, h2, input, label, select, form, textarea, span, img, button").click(function (e) {
-    e.stopImmediatePropagation();
-    e.stopPropagation();
-});
-
-$("#marketWrap div, h2, input, label, select, form, textarea, span, img, button").click(function (e) {
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-});
-
-//Toggla classen på marketWrap & pickWrap
-$(':not(.marketWrap)').click(function () {
-
+$('body').click(function () {
+    if ($("#pickWrap").hasClass('active')) {
+        $('.pickWrap').toggleClass('active');
+    }
     if ($("#marketWrap").hasClass('active')) {
         $('.marketWrap, a').toggleClass('active');
     }
-})
+});
 
-$(':not(.pickWrap)').click(function () {
+$("#pickWrap").click(function (e) {
+    //e.stopImmediatePropagation();
+    e.stopPropagation();
+});
 
-    if ($("#pickWrap").hasClass('active')) {
-        $('.pickWrap, a').toggleClass('active');
-    }
-})
+$("#marketWrap").click(function (e) {
+    //e.stopImmediatePropagation();
+    e.stopPropagation();
+});
 
 $('.marketItem-btn').on('click', function () {
     $('.marketWrap, a').toggleClass('active');

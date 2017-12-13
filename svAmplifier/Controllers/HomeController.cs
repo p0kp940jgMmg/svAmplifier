@@ -27,6 +27,11 @@ namespace svAmplifier.Controllers
             return View();
         }
 
+        public IActionResult Reg()
+        {
+            return View();
+        }
+
         //i formulär: alltid en get och en post. en som visar... 
         [HttpGet]
         public IActionResult Login()            
@@ -56,11 +61,11 @@ namespace svAmplifier.Controllers
         [HttpGet]
         public IActionResult RegisterUser()
         {
-            return View();
+            return RedirectToAction(nameof(Reg));
         }
 
         [HttpPost]
-        public async Task<IActionResult> RegisterUser(RegisterUserVM registerUserVM)
+        public async Task<IActionResult> Reg(RegisterUserVM registerUserVM)
         {
             if (!ModelState.IsValid)
                 return View(registerUserVM);

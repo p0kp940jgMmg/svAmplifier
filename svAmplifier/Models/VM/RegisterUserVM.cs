@@ -13,13 +13,6 @@ namespace svAmplifier.Models.VM
 
         [Required]
         public string Email { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string Zipcode { get; set; }
-        public string TelephoneNumber { get; set; }
-        public string Clan { get; set; }
 
         [Required(ErrorMessage = "Please enter a Password")]
         public string Password { get; set; }

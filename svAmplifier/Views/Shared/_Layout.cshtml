@@ -19,17 +19,17 @@
                     <span class="navbar-toggler-bar"></span>
                     <span class="navbar-toggler-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://localhost:58471/home/test">svAmplifier</a>
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand">svAmplifier</a>
             </div>
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Go to Market" data-placement="bottom" href="/user/map" target="_blank">
+                        <a asp-controller="User" asp-action="SwedenMap" class="nav-link" title="Go to Market" data-placement="bottom">
                             <i class="fa fa-shopping-bag"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="My Items" data-placement="bottom" href="/user/myItems" target="_blank">
+                        <a asp-controller="User" asp-action="UpdateUserInfo" class="nav-link" title="My Items" data-placement="bottom">
                             <i class="fa fa-user fa-2x"></i>
                         </a>
                     </li>
@@ -37,7 +37,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         @*<a href="user/logout" target="_blank" class="btn btn-danger btn-round">Logout</a>*@
-                        <a asp-controller="User" class="btn btn-danger btn-round" asp-action="AddPickItem">Logout</a>
+                        <a asp-controller="User" class="btn btn-danger btn-round" asp-action="Logout">Logout</a>
                     </li>
                 </ul>
             </div>

@@ -1,0 +1,60 @@
+﻿@model RegisterUserVM
+
+@{
+    Layout = "_FormLayout";
+}
+
+<div id="main-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 left-side">
+                <header>
+                    <span>Lorem Ipsum</span>
+                    <h3>Lorem Ipsum<br />Lorem Ipsum</h3>
+                </header>
+            </div>
+            <div class="col-md-6 right-side">
+                <form asp-controller="Home" asp-action="Reg">
+                    <span class="input input--hoshi">
+                        <input class="input__field input__field--hoshi" type="text" asp-for="UserName" />
+                        <label class="input__label input__label--hoshi input__label--hoshi-color-3" asp-for="UserName">
+                            <span class="input__label-content input__label-content--hoshi" asp-validation-for="UserName">Username</span>
+                        </label>
+                    </span>
+                    <span class="input input--hoshi">
+                        <input asp-for="Email" class="input__field input__field--hoshi" type="text" id="email" />
+                        <label asp-for="Email" class="input__label input__label--hoshi input__label--hoshi-color-3" for="email">
+                            <span asp-for="Email" class="input__label-content input__label-content--hoshi">E-mail</span>
+                        </label>
+                    </span>
+                    <span class="input input--hoshi">
+                        <input asp-for="Password" class="input__field input__field--hoshi" type="password" id="password" />
+                        <label asp-for="Password" class="input__label input__label--hoshi input__label--hoshi-color-3" for="password">
+                            <span asp-for="Password" class="input__label-content input__label-content--hoshi">Password</span>
+                        </label>
+                    </span>
+                    <span class="input input--hoshi">
+                        <input asp-for="Password2" class="input__field input__field--hoshi" type="password" id="password1" />
+                        <label asp-for="Password2" class="input__label input__label--hoshi input__label--hoshi-color-3" for="password1">
+                            <span asp-for="Password2" class="input__label-content input__label-content--hoshi">Repeat Password</span>
+                        </label>
+                    </span>
+
+                    <div class="cta">
+                        <input type="submit" value="Sign-Up Now" class="btn btn-primary pull-left" />
+                </form>
+                <span><a asp-controller="User" asp-action="Login">I am already a member</a></span>
+            </div>
+            <ul class="social list-inline">
+                <li><a href="www.facebook.com">Facebook</a></li>
+                <li><a href="www.twitter.com">Twitter</a></li>
+                <li><a href="www.linkedin.com">Linkedin</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div> <!-- end #main-wrapper -->
+<!-- Scripts -->
+<script src="js/scripts.js"></script>
+<script src="js/classie.js"></script>
+

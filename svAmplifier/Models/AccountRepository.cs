@@ -56,14 +56,27 @@ namespace svAmplifier.Models
             return result.Succeeded;
         }
 
+        public async Task<bool> Logout()
+        {
+            try
+            {
+                await signInManager.SignOutAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+                //TODO
+                return false;
+            }
+        }
+
         public async Task<bool> RegisterUser(RegisterUserVM registerUserVM)
         {
             //skapa egen användare i tabell(AspUser)
             var user = new IdentityUser(registerUserVM.UserName)
             {
-                //lägger till email+Phonenumber i AspUser
-                Email = registerUserVM.Email,
-                PhoneNumber = registerUserVM.TelephoneNumber
+                //lägger till email
+                Email = registerUserVM.Email
             };
 
             var result = await userManager.CreateAsync(user, registerUserVM.Password);
@@ -79,12 +92,12 @@ namespace svAmplifier.Models
                 await context.User.AddAsync(new User
                 {
                     AspNetId = userId,
-                    City = registerUserVM.City,
-                    Street = registerUserVM.Street,
-                    Zipcode = registerUserVM.Zipcode,
-                    Phonenumber = registerUserVM.TelephoneNumber,
-                    Firstname = registerUserVM.FirstName,
-                    Lastname = registerUserVM.LastName,
+                    //City = registerUserVM.City,
+                    //Street = registerUserVM.Street,
+                    //Zipcode = registerUserVM.Zipcode,
+                    //Phonenumber = registerUserVM.TelephoneNumber,
+                    //Firstname = registerUserVM.FirstName,
+                    //Lastname = registerUserVM.LastName,
                     Username = registerUserVM.UserName
                 });
 
@@ -110,12 +123,12 @@ namespace svAmplifier.Models
 
             try
             {
-                userToUpdate.Firstname = updatedUser.FirstName;
-                userToUpdate.Lastname = updatedUser.LastName;
-                userToUpdate.Street = updatedUser.Street;
-                userToUpdate.City = updatedUser.City;
-                userToUpdate.Zipcode = updatedUser.Zipcode;
-                userToUpdate.Phonenumber = updatedUser.TelephoneNumber;
+                //userToUpdate.Firstname = updatedUser.FirstName;
+                //userToUpdate.Lastname = updatedUser.LastName;
+                //userToUpdate.Street = updatedUser.Street;
+                //userToUpdate.City = updatedUser.City;
+                //userToUpdate.Zipcode = updatedUser.Zipcode;
+                //userToUpdate.Phonenumber = updatedUser.TelephoneNumber;
 
                 await context.SaveChangesAsync();
 

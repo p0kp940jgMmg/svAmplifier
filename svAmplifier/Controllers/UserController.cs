@@ -91,12 +91,6 @@ namespace svAmplifier.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult SwedenMap(string id)
-        //{
-        //    return RedirectToAction(nameof("market"), id);
-        //}
-
         [AllowAnonymous]
         public async Task<IActionResult> Market(string id)
         {
@@ -121,13 +115,19 @@ namespace svAmplifier.Controllers
             return View();
         }
 
-        //[AllowAnonymous]
-        //[HttpPost]
-        //public IActionResult UpdateUserInfo()
-        //{
-        //    return Content("Success");
-        //}
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            if (await accountRepos.Logout())
+            {
+            return RedirectToAction(nameof(Index), "Home");
+            }
+            else
+            {
+                return RedirectToAction(nameof(Error), "Kunde inte logga ut");
+            }
 
+        }
     }
 
 
