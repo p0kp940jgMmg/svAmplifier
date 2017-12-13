@@ -18,7 +18,5 @@ namespace svAmplifier.Models.VM
         public string Lastname { get; set; }
 
         public string Username { get; set; }
-
-        public Pick[] Picks { get; set; }
     }
 }

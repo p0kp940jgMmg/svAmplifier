@@ -106,7 +106,7 @@ namespace svAmplifier.Models
             return result.Succeeded;
         }
 
-        public async Task<bool> UpdateUser(RegisterUserVM updatedUser)
+        public async Task<bool> UpdateUser(EditUserInfoVM updatedUser)
         {
             //Hämtar nuvarande användaren
             var currentUserId = userManager.GetUserId(contextAccessor.HttpContext.User);
@@ -123,12 +123,12 @@ namespace svAmplifier.Models
 
             try
             {
-                //userToUpdate.Firstname = updatedUser.FirstName;
-                //userToUpdate.Lastname = updatedUser.LastName;
-                //userToUpdate.Street = updatedUser.Street;
-                //userToUpdate.City = updatedUser.City;
-                //userToUpdate.Zipcode = updatedUser.Zipcode;
-                //userToUpdate.Phonenumber = updatedUser.TelephoneNumber;
+                userToUpdate.Firstname = updatedUser.Firstname;
+                userToUpdate.Lastname = updatedUser.Lastname;
+                userToUpdate.Street = updatedUser.Street;
+                userToUpdate.City = updatedUser.City;
+                userToUpdate.Zipcode = updatedUser.Zipcode;
+                userToUpdate.Phonenumber = updatedUser.Phonenumber;
 
                 await context.SaveChangesAsync();
 

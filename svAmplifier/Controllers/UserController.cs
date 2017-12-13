@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using svAmplifier.Models;
 using svAmplifier.Models.Entities;
 using svAmplifier.Models.VM;
@@ -115,6 +116,23 @@ namespace svAmplifier.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> UpdateUserInfo(EditUserInfoVM edit)
+        {
+
+            
+            if (!(await accountRepos.UpdateUser(edit)))
+            {
+                string msg = "Error!, we couldn't update user info";
+
+                return RedirectToAction(nameof(Error), "User", msg);
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
+        }
         [HttpGet]
         public async Task<IActionResult> Logout()
         {
