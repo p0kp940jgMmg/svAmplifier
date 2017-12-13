@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using svAmplifier.Models;
 using svAmplifier.Models.Entities;
 using svAmplifier.Models.VM;
@@ -91,12 +92,6 @@ namespace svAmplifier.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult SwedenMap(string id)
-        //{
-        //    return RedirectToAction(nameof("market"), id);
-        //}
-
         [AllowAnonymous]
         public async Task<IActionResult> Market(string id)
         {
@@ -121,12 +116,23 @@ namespace svAmplifier.Controllers
             return View();
         }
 
-        //[AllowAnonymous]
-        //[HttpPost]
-        //public IActionResult UpdateUserInfo()
-        //{
-        //    return Content("Success");
-        //}
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> UpdateUserInfo(EditUserInfoVM edit)
+        {
+
+            
+            if (!(await accountRepos.UpdateUser(edit)))
+            {
+                string msg = "Error!, we couldn't update user info";
+
+                return RedirectToAction(nameof(Error), "User", msg);
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
+        }
 
     }
 
