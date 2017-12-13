@@ -34,12 +34,11 @@ namespace svAmplifier.Models
             this.context = context;
         }
 
-        internal async Task<UserIndexLayoutVM> GetUserIndexVM()
+        internal async Task<UserIndexLayoutVM> GetUserIndexLayoutVM()
         {
             UserIndexLayoutVM userIndexLayout = new UserIndexLayoutVM();
 
-            var ltMarketItems = await GetMarketItems();
-
+            var ltMarketItems = await GetUserMarketItems();
             var myPicks = await GetUserPicks();
 
             userIndexLayout.LatestMarketItems = ltMarketItems;
@@ -133,16 +132,12 @@ namespace svAmplifier.Models
         {
             try
             {
-                //Hämtar nuvarande användarens AspID
-                var userAspId = userManager.GetUserId(contextAccessor.HttpContext.User);
-
-                //Hämtar nuvarande användarens User med AspID
-                User user = await context.User
-                    .FirstOrDefaultAsync(u => u.AspNetId == userAspId);
 
                 //sätter PickID till nyvarande användarens UserID
-                pickItem.UserId = user.Id;
-                pickItem.Username = user.Username;
+                pickItem.UserId = GetCurrentUserId();
+                pickItem.Username = GetCurrentUser().Username;
+
+                //pickItem.Region = "AB-SE";
                 //pickItem.DatePicked = new DateTime(2017, 12, 08);
                 //pickItem.MushroomName = "MushroomTest";
                 //pickItem.MushroomPicUrl = "test";
@@ -218,35 +213,43 @@ namespace svAmplifier.Models
             }
         }
 
-        public async Task<MyItemsVM> GetMushrooms()
+        public async Task<SelectListItem[]> GetMushrooms()
         {
-            MyItemsVM myItemsVM = new MyItemsVM
-            {
-                Mushrooms = await context.Mushrooms
-                .Select(m => new SelectListItem { Text = m.MushroomName, Value = m.Id.ToString() })
-                .ToArrayAsync()
-            };
 
-            return myItemsVM;
+            var mushrooms = await context.Mushrooms
+            .Select(m => new SelectListItem { Text = m.MushroomName, Value = m.Id.ToString() })
+            .ToArrayAsync();
+
+            return mushrooms;
         }
 
-        //Hämtar de 5 senaste Market Items
-        public async Task<Pick[]> GetMarketItems()
+        public async Task<SelectListItem[]> GetRegions()
+        {
+
+            var regions = await context.Regions
+            .Select(m => new SelectListItem { Text = m.Region, Value = m.Id.ToString() })
+            .ToArrayAsync();
+
+            return regions;
+        }
+
+        //Hämtar de 20 senaste Market Items
+        public async Task<Pick[]> GetLatestMarketItems()
         {
             return await context.Pick
                 .Where(w => w.SalesItem == true)
                 .OrderByDescending(o => o.DatePicked)
-                .Take(5)
+                .Take(20)
                 .ToArrayAsync();
         }
 
-        public async Task<Pick[]> GetMarketItemsForRegion(string theRegion)
+        //Hämtar alla User Market Items
+        public async Task<Pick[]> GetUserMarketItems()
         {
             return await context.Pick
-                .Where(w => w.SalesItem == true && w.Region == theRegion)
+                .Where(w => w.SalesItem == true && w.UserId == GetCurrentUserId())
                 .OrderByDescending(o => o.DatePicked)
                 .ToArrayAsync();
-          
         }
 
         //Hämtar alla User picks
@@ -258,11 +261,10 @@ namespace svAmplifier.Models
                 .ToArrayAsync();
         }
 
-        //Hämtar alla User Market Items
-        public async Task<Pick[]> GetUsersMarketItems()
+        public async Task<Pick[]> GetMarketItemsForRegion(string region)
         {
             return await context.Pick
-                .Where(w => w.SalesItem == true && w.UserId == GetCurrentUserId())
+                .Where(w => w.SalesItem == true && w.Region == region)
                 .OrderByDescending(o => o.DatePicked)
                 .ToArrayAsync();
         }
@@ -271,8 +273,18 @@ namespace svAmplifier.Models
         {
             var aspUserId = userManager.GetUserId(contextAccessor.HttpContext.User);
 
+            //Får inte vara Async, User blir null
             return context.User
-                .FirstOrDefaultAsync(w => w.AspNetId == aspUserId).Id;
+                .FirstOrDefault(w => w.AspNetId == aspUserId).Id;
+        }
+
+        public User GetCurrentUser()
+        {
+            var aspUserId = userManager.GetUserId(contextAccessor.HttpContext.User);
+
+            //Får inte vara Async, User blir null
+            return context.User
+                .FirstOrDefault(w => w.AspNetId == aspUserId);
         }
     }
 }

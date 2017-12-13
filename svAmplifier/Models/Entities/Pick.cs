@@ -10,7 +10,7 @@ namespace svAmplifier.Models.Entities
         public string Longitude { get; set; }
         public string MushroomName { get; set; }
         public string MushroomPicUrl { get; set; }
-        public DateTime DatePicked { get; set; }
+        public DateTime? DatePicked { get; set; }
         public int? WeightInGrams { get; set; }
         public int? UserId { get; set; }
         public decimal? Price { get; set; }

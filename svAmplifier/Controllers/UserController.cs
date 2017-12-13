@@ -25,36 +25,63 @@ namespace svAmplifier.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var model = await accountRepos.GetUserIndexVM();
+            var model = await accountRepos.GetUserIndexLayoutVM();
+
+            model.MyItems.Mushrooms = await accountRepos.GetMushrooms();
+            model.MyItems.Regions = await accountRepos.GetRegions();
 
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddPickItem(MyItemsVM pick)
+        public async Task<IActionResult> AddPickItem(UserIndexLayoutVM pick)
         {
+            pick.MyItems.NewPick.SalesItem = false;
 
             if (!ModelState.IsValid)
             {
-                return RedirectToAction(nameof(MyItems), pick);
+                return RedirectToAction(nameof(Index), pick);
             }
 
-            if (!(await accountRepos.AddPick(pick.NewPick)))
+            if (pick.Cordinates != null)
             {
-                pick.Message = "Error!, we couldn't add your item";
-                return View(pick);
+                var cord = pick.Cordinates;
+                cord = cord.Replace('(', ' ');
+                cord = cord.Replace(')', ' ');
+
+                string[] cordArr = cord.Split(',');
+                pick.MyItems.NewPick.Latitude = cordArr[0];
+                pick.MyItems.NewPick.Longitude = cordArr[1];
             }
 
-            return RedirectToAction(nameof(MyItems));
+            if (!(await accountRepos.AddPick(pick.MyItems.NewPick)))
+            {
+                string msg = "Error!, we couldn't add your item.";
+
+                return RedirectToAction(nameof(Error), "User", msg);
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> MyItems()
+        [HttpPost]
+        public async Task<IActionResult> AddMarketItem(UserIndexLayoutVM pick)
         {
-            MyItemsVM myItems = await accountRepos.GetMushrooms();
-            myItems.MyMarketItems = await accountRepos.GetMarketItems();
+            pick.MyItems.NewPick.SalesItem = true;
 
-            return View(myItems);
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction(nameof(Index), pick);
+            }
+
+            if (!(await accountRepos.AddPick(pick.MyItems.NewPick)))
+            {
+                string msg = "Error!, we couldn't add your item.";
+
+                return RedirectToAction(nameof(Error), "User", msg);
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
         [AllowAnonymous]
@@ -74,13 +101,18 @@ namespace svAmplifier.Controllers
         public async Task<IActionResult> Market(string id)
         {
             var picks = await accountRepos.GetMarketItemsForRegion(id);
-            MarketPickVM marketItemVM = new MarketPickVM {
+            MarketPickVM marketItemVM = new MarketPickVM
+            {
                 MarketItems = picks
             };
             return View(marketItemVM);
-           
+
         }
-        
+
+        public IActionResult Error(string msg)
+        {
+            return View(msg);
+        }
     }
 
 

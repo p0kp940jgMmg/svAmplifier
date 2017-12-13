@@ -1,0 +1,114 @@
+﻿#marketMap {
+  height: 100px;
+  /* Optional: Makes the sample page fill the window. */
+  /*html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}*/ }
+  #marketMap #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300; }
+  #marketMap #infowindow-content .title {
+    font-weight: bold; }
+  #marketMap #infowindow-content {
+    display: none; }
+  #marketMap #map #infowindow-content {
+    display: inline; }
+  #marketMap .pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto; }
+  #marketMap #pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px; }
+  #marketMap .pac-controls {
+    display: inline-block;
+    padding: 5px 11px; }
+  #marketMap .pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300; }
+  #marketMap #pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px; }
+  #marketMap #pac-input:focus {
+    border-color: #4d90fe; }
+  #marketMap #title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px; }
+  #marketMap #target {
+    width: 345px; }
+
+#pickMap {
+  height: 100px;
+  /* Optional: Makes the sample page fill the window. */
+  /*html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}*/ }
+  #pickMap #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300; }
+  #pickMap #infowindow-content .title {
+    font-weight: bold; }
+  #pickMap #infowindow-content {
+    display: none; }
+  #pickMap #map #infowindow-content {
+    display: inline; }
+  #pickMap .pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto; }
+  #pickMap #pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px; }
+  #pickMap .pac-controls {
+    display: inline-block;
+    padding: 5px 11px; }
+  #pickMap .pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300; }
+  #pickMap #pac-input2 {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px; }
+  #pickMap #pac-input2:focus {
+    border-color: #4d90fe; }
+  #pickMap #title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px; }
+  #pickMap #target {
+    width: 345px; }
+

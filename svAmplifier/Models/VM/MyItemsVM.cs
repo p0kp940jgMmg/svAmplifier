@@ -9,10 +9,10 @@ namespace svAmplifier.Models.VM
 {
 	public class MyItemsVM
 	{
-		public Pick[] MyMarketItems { get; set; }
 		public string Message { get; set; } = "Couldnt add ur pick";
 		public Pick NewPick { get; set; }
         public SelectListItem[] Mushrooms { get; set; }
+        public SelectListItem[] Regions { get; set; }
         public int SelectedMushID { get; set; }
     }
 }

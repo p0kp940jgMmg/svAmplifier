@@ -2,9 +2,9 @@
 
 @foreach (var item in Model.Picks)
 {
-    <div class="historyItem" id="">
+    <div class="historyItem" id="@item.UserId">
         <div class="thumbnail">
-                <div id="map-@(item.UserId++)" class="map" lat="@item.Latitude" lng="@item.Longitude"></div>
+                <div id="map-@(item.Id)" class="map" lat="@item.Latitude" lng="@item.Longitude"></div>
         </div>
         <div class="historyInfo">
             <p>@item.MushroomName</p>

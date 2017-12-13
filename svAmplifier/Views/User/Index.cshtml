@@ -1,4 +1,5 @@
-﻿
+﻿@model UserIndexLayoutVM
+
 @{
     Layout = "_Layout";
 }
@@ -11,17 +12,150 @@
 
     <div class="userIndexGutter"></div>
     <div class="marketItemColumn">
-        <a asp-controller="User" asp-action="MyItems" class="btn btn-danger btn-round marketItemColumn-btn">My Items</a>
+        <div id="buttonDiv">
+            <a class="btn btn-danger btn-round marketItem-btn">Ny försäljning</a>
+            <a class="btn btn-danger btn-round pickItem-btn">Ny plockning</a>
+        </div>
         <h4>Marketplace</h4>
         @{ Html.RenderPartial("MarketPV"); }
     </div>
 </div>
+
+<div class='marketWrap' id="marketWrap">
+    <div class='content'>
+        <h2>Lägg till försäljning</h2>
+        <br />
+        <div class="contact-form">
+            <form asp-controller="User" asp-action="AddMarketItem">
+                <label asp-for="MyItems.Mushrooms"></label>
+                <select asp-for="MyItems.NewPick.MushroomName"
+                        asp-items="Model.MyItems.Mushrooms"></select>
+                <span asp-validation-for="MyItems.NewPick.MushroomName" type=""></span>
+                <br />
+
+                <label asp-for="MyItems.NewPick.MushroomPicUrl"></label>
+                <input asp-for="MyItems.NewPick.MushroomPicUrl" />
+                <span asp-validation-for="MyItems.NewPick.MushroomPicUrl" type=""></span>
+                <br />
+
+                <label asp-for="MyItems.Regions"></label>
+                <select asp-for="MyItems.NewPick.Region"
+                        asp-items="Model.MyItems.Regions"></select>
+                <span asp-validation-for="MyItems.NewPick.Region" type=""></span>
+                <br />
+
+                <label asp-for="MyItems.NewPick.DatePicked"></label>
+                <input type="date" asp-for="MyItems.NewPick.DatePicked" />
+                <span asp-validation-for="MyItems.NewPick.DatePicked"></span>
+                <br />
+                <label asp-for="MyItems.NewPick.Price"></label>
+                <input asp-for="MyItems.NewPick.Price" />
+                <span asp-validation-for="MyItems.NewPick.Price"></span>
+                @*<br />
+                    <label asp-for="NewPick.Region"></label>
+                    <input asp-for="NewPick.Region" />
+                    <span asp-validation-for="NewPick.Region"></span>*@
+                <br />
+                <label asp-for="MyItems.NewPick.WeightInGrams"></label>
+                <input asp-for="MyItems.NewPick.WeightInGrams" />
+                <span asp-validation-for="MyItems.NewPick.WeightInGrams"></span>
+                <br />
+                <label asp-for="MyItems.NewPick.City"></label>
+                <input asp-for="MyItems.NewPick.City" />
+                <span asp-validation-for="MyItems.NewPick.City"></span>
+                <br />
+                <label asp-for="MyItems.NewPick.Description"></label>
+                <textarea name="NewPick.Description"
+                          data-val-maxlength-max="5000"
+                          data-val-maxlength="The field Description must be a string or array type with a maximum length of '5000'."
+                          data-val="true"></textarea>
+                <span asp-validation-for="MyItems.NewPick.Description"></span>
+                <br />
+
+                <input type="submit" value="ADD ITEM" />
+            </form>
+        </div>
+    </div>
+    <i id="btn2" class='button fa fa-minus' href='#'></i>
+</div>
+
+
+<div class='pickWrap' id="pickWrap">
+    <div class='content'>
+        <h2>Lägg till ny plockning</h2>
+        <br />
+        <div id="pickMapDiv">
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <div id="pickMap"></div>
+            <div class="contact-form">
+                <form asp-controller="User" asp-action="AddPickItem">
+                    <label asp-for="MyItems.Mushrooms"></label>
+                    <select asp-for="MyItems.NewPick.MushroomName"
+                            asp-items="Model.MyItems.Mushrooms"></select>
+                    <span asp-validation-for="MyItems.NewPick.MushroomName" type=""></span>
+                    <br />
+
+                    <label asp-for="MyItems.NewPick.MushroomPicUrl"></label>
+                    <input asp-for="MyItems.NewPick.MushroomPicUrl" />
+                    <span asp-validation-for="MyItems.NewPick.MushroomPicUrl" type=""></span>
+                    <br />
+
+                    <label asp-for="MyItems.Regions"></label>
+                    <select asp-for="MyItems.NewPick.Region"
+                            asp-items="Model.MyItems.Regions"></select>
+                    <span asp-validation-for="MyItems.NewPick.Region" type=""></span>
+                    <br />
+
+                    <label asp-for="MyItems.NewPick.DatePicked"></label>
+                    <input type="date" asp-for="MyItems.NewPick.DatePicked" />
+                    <span asp-validation-for="MyItems.NewPick.DatePicked"></span>
+                    <br />
+                    <label asp-for="MyItems.NewPick.Price"></label>
+                    <input asp-for="MyItems.NewPick.Price" />
+                    <span asp-validation-for="MyItems.NewPick.Price"></span>
+                    @*<br />
+                        <label asp-for="NewPick.Region"></label>
+                        <input asp-for="NewPick.Region" />
+                        <span asp-validation-for="NewPick.Region"></span>*@
+                    <br />
+                    <label asp-for="MyItems.NewPick.WeightInGrams"></label>
+                    <input asp-for="MyItems.NewPick.WeightInGrams" />
+                    <span asp-validation-for="MyItems.NewPick.WeightInGrams"></span>
+                    <br />
+                    <label asp-for="MyItems.NewPick.City"></label>
+                    <input asp-for="MyItems.NewPick.City" />
+                    <span asp-validation-for="MyItems.NewPick.City"></span>
+                    <br />
+                    <label asp-for="MyItems.NewPick.Description"></label>
+                    <textarea name="NewPick.Description"
+                              data-val-maxlength-max="5000"
+                              data-val-maxlength="The field Description must be a string or array type with a maximum length of '5000'."
+                              data-val="true"></textarea>
+                    <span asp-validation-for="MyItems.NewPick.Description"></span>
+                    <br />
+
+                    <label hidden asp-for="Cordinates"></label>
+                    <input type="hidden" id="latLngForm" asp-for="Cordinates" />
+                    <span hidden asp-validation-for="Cordinates"></span>
+
+                    <input type="submit" value="ADD ITEM" />
+                </form>
+            </div>
+            <i id="btn" class='button fa fa-minus' href='#'></i>
+        </div>
+    </div>
+</div>
+
 @section scripts{
     <script src="~/Scripts/UserIndexJavaScript.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-NO0BxUeyZRy0uCpNaUZHmzazDH9R7xk&callback=initMap">
     </script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-NO0BxUeyZRy0uCpNaUZHmzazDH9R7xk&libraries=places&callback=initAutocomplete"
+            async defer></script>
+
     <link href="~/Styles/TestStyleSheet.css" rel="stylesheet" />
     <link href="~/Styles/User-Index.css" rel="stylesheet" />
+    <link href="~/Styles/MapsStyleSheet.min.css" rel="stylesheet" />
 }

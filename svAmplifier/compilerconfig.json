@@ -14,6 +14,10 @@
   {
     "outputFile": "wwwroot/Styles/User-Market.css",
     "inputFile": "Sass/User-Market.scss"
+  },
+  {
+    "outputFile": "wwwroot/Styles/MapsStyleSheet.css",
+    "inputFile": "Sass/MapsStyleSheet.scss"
   }
 ]
 
