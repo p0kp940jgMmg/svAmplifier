@@ -16,7 +16,7 @@ namespace svAmplifier.Models.Entities
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"Data Source=dottnett.database.windows.net;Initial Catalog=Room;Integrated Security=False;User ID=danielsoderberg;Password=T0matS()ppa;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                optionsBuilder.UseSqlServer(@"Data Source=dottnett.database.windows.net;Initial Catalog=Room;Integrated Security=False;User ID=danielsoderberg;Password=ACADEMY10(X);Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             }
         }
 
@@ -54,6 +54,10 @@ namespace svAmplifier.Models.Entities
                 entity.Property(e => e.Region).HasMaxLength(8);
 
                 entity.Property(e => e.Street).HasMaxLength(50);
+
+                entity.Property(e => e.UserEmail).HasMaxLength(50);
+
+                entity.Property(e => e.UserPhone).HasMaxLength(50);
 
                 entity.Property(e => e.Zip).HasMaxLength(50);
 

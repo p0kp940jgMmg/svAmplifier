@@ -8,10 +8,10 @@ namespace svAmplifier.Models.VM
 {
     public class RegisterUserVM
     {
-        [Required]
+        [Required(ErrorMessage = "Please enter a valid username")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a valid email")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Please enter a Password")]

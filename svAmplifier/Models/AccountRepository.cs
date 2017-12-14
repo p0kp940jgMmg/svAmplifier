@@ -102,7 +102,9 @@ namespace svAmplifier.Models
                 });
 
                 await context.SaveChangesAsync();
+                return result.Succeeded;
             }
+
             return result.Succeeded;
         }
 
@@ -147,8 +149,10 @@ namespace svAmplifier.Models
             {
 
                 //sätter PickID till nyvarande användarens UserID
+
+                var user = GetCurrentUser();
                 pickItem.UserId = GetCurrentUserId();
-                pickItem.Username = GetCurrentUser().Username;
+                pickItem.Username = user.Username;
                 var mushroom = await GetMushroom(Convert.ToInt32(pickItem.MushroomName));
                 pickItem.MushroomName = mushroom.MushroomName;
                 pickItem.MushroomPicUrl = mushroom.MushroomPicUrl;
@@ -156,6 +160,8 @@ namespace svAmplifier.Models
                 var region = await GetRegionCode(Convert.ToInt32(pickItem.Region));
                 string regionTrim = region.RegionId.Trim();
                 pickItem.Region = regionTrim;
+
+                pickItem.UserPhone = user.Phonenumber;
 
                 //var trimmedSum = Convert.ToDecimal(pickItem.Price.ToString().Trim('0'));
 
@@ -172,6 +178,11 @@ namespace svAmplifier.Models
                 return false;
             }
 
+        }
+
+        private string GetAspUser()
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<bool> RemovePick(int pickItemID)
@@ -273,10 +284,20 @@ namespace svAmplifier.Models
 
         public async Task<Pick[]> GetMarketItemsForRegion(string region)
         {
-            return await context.Pick
+
+            var picks = await context.Pick
                 .Where(w => w.SalesItem == true && w.Region == region)
                 .OrderByDescending(o => o.DatePicked)
                 .ToArrayAsync();
+
+
+            return picks;
+        }
+
+        private User GetUserById(int? userId)
+        {
+            return context.User
+                .FirstOrDefault(f => f.Id == userId);
         }
 
         public int GetCurrentUserId()

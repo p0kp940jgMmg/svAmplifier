@@ -103,12 +103,13 @@ namespace svAmplifier.Controllers
         public async Task<IActionResult> Market(string id)
         {
             var picks = await accountRepos.GetMarketItemsForRegion(id);
+
             MarketPickVM marketItemVM = new MarketPickVM
             {
                 MarketItems = picks
             };
-            return View(marketItemVM);
 
+            return View(marketItemVM);
         }
 
         public IActionResult Error(string msg)

@@ -11,7 +11,7 @@ function initMap() {
         var mapDivId = $(value).attr('id');
 
         maps[mapDivId] = new google.maps.Map(document.getElementById(mapDivId), {
-            zoom: 10,
+            zoom: 15,
             center: uluru
         });
 
@@ -24,7 +24,7 @@ function initMap() {
 
 
 
-//Klicka utanför forms för att hidea Diven
+//Klicka utanför forms för att gömma Divarna
 $('body').click(function () {
     if ($("#pickWrap").hasClass('active')) {
         $('.pickWrap').toggleClass('active');
@@ -72,7 +72,7 @@ $('#btn').on('click', function () {
 function initAutocomplete() {
 
     var marketMap = new google.maps.Map(document.getElementById('pickMap'), {
-        center: { lat: -33.8688, lng: 151.2195 },
+        center: { lat: 59.3293, lng: 18.0686 },
         zoom: 13,
         mapTypeId: 'roadmap'
     });

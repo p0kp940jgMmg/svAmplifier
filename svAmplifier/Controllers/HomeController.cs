@@ -62,12 +62,6 @@ namespace svAmplifier.Controllers
 
         }
 
-        [HttpGet]
-        public IActionResult RegisterUser()
-        {
-            return RedirectToAction(nameof(Reg));
-        }
-
         [HttpPost]
         public async Task<IActionResult> Reg(RegisterUserVM registerUserVM)
         {
@@ -78,10 +72,6 @@ namespace svAmplifier.Controllers
             {
                 ModelState.AddModelError(nameof(RegisterUserVM.UserName), "Registration failed...");
                 return View(registerUserVM);
-            }
-            else
-            {
-                accountRepository.SetSessionUsername();
             }
 
             return RedirectToAction(nameof(UserController.Index), "User");

@@ -1,9 +1,11 @@
-﻿$red: #F99C04;
+﻿
+
+$red: #F99C04;
 $button: hsl(39, 100%, 53%); //stora knappen
-$icons: white; //ikoner
+$icons: white; 
 $hoverColor: hsl(39, 100%, 53%);
-$brown: #584E4A; //bakgrunden
-$whitey: #ffffff; //förgrunden
+$background: #584E4A;
+$foreground: #ffffff;
 $shazamBild: "http://www.wallpaperbetter.com/wallpaper/981/242/403/green-dark-forest-hd-1080P-wallpaper.jpg";
 $btnColor: white;
 
@@ -34,7 +36,7 @@ body {
     transform-origin: top left;
     transition: transform .7s $snap;
     // styling
-    background-color: $whitey;
+    background-color: $foreground;
     font-family: 'Times New Roman';
     padding: 5px 5px 5px 5px;
 }
