@@ -184,7 +184,6 @@ namespace svAmplifier.Models
 
         }
 
-
         public async Task<bool> RemovePick(int pickItemID)
         {
 
@@ -306,6 +305,28 @@ namespace svAmplifier.Models
             //Får inte vara Async, User blir null
             return context.User
                 .FirstOrDefault(w => w.AspNetId == aspUserId);
+        }
+
+        public bool SetSessionUsername()
+        {
+            try
+            {
+                var userName = GetCurrentUser().Username;
+
+                contextAccessor.HttpContext.Session.SetString("Username", userName);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+        public string GetSessionUsername()
+        {
+            return contextAccessor.HttpContext.Session.GetString("Username");
         }
 
         private Task<Mushrooms> GetMushroom(int id)

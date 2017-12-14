@@ -30,6 +30,8 @@ namespace svAmplifier.Controllers
 
             model.MyItems.Mushrooms = await accountRepos.GetMushrooms();
             model.MyItems.Regions = await accountRepos.GetRegions();
+            //model.Username = accountRepos.GetSessionUsername();
+
 
             return View(model);
         }
@@ -118,7 +120,19 @@ namespace svAmplifier.Controllers
         [HttpGet]
         public IActionResult UpdateUserInfo()
         {
-            return View();
+            var user = accountRepos.GetCurrentUser();
+            var userToUpdate = new EditUserInfoVM
+            {
+                City = user.City,
+                Firstname = user.Firstname,
+                Lastname = user.Lastname,
+                Phonenumber = user.Phonenumber,
+                Street = user.Street,
+                Zipcode = user.Zipcode,
+                Username = user.Username
+            };
+
+            return View(userToUpdate);
         }
 
         [AllowAnonymous]

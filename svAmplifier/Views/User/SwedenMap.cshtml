@@ -1,15 +1,15 @@
 ﻿@using svAmplifier.Controllers
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Gå till område: </title>
+
+@{
+    Layout = "_Layout";
+}
+
+
+@section scripts{
     <link href="~/Styles/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/jquery-jvectormap-2.0.3.min.js"></script>
     <script src="~/Scripts/jquery-jvectormap-se-merc.js"></script>
-</head>
-<body>
-    <div id="map" style="width: 400px; height: 600px"></div>
     <script>
         $(function () {
             $('#map').vectorMap({
@@ -19,6 +19,14 @@
                 } });
         });
     </script>
-</body>
-</html>
-
+    <link href="~/Styles/SwedenMapStyleSheet.css" rel="stylesheet" />
+}
+<div id="mapContainer">
+    <div class="gutter"></div>
+    <div id="swedenMapText">
+        <span>Karta</span>
+        <h3>Vänligen välj vilken län du vill shoppa i</h3>
+    </div>
+    <div id="map"></div>
+    <div class="gutter"></div>
+</div>

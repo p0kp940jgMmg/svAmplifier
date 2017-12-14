@@ -54,18 +54,25 @@ body {
     width: 500px;
     color: black;
     background-color: white;
-    /*border-radius: 25px;*/
-    border: 2px solid #139cf7;
-    padding: 20px; }
+    border-radius: 5px;
+    border: 1px solid #139cf7;
+    padding: 20px;
+    margin-bottom: 3px;
+    margin-top: 7px; }
     .marketItemColumn .marketItem .thumbnail {
-      /*border-radius: 25px;*/
-      border: 5px solid #f99c04; }
+      border-radius: 5px;
+      /*border: 5px solid #f99c04;*/
+      width: 35%;
+      height: 7%;
+      overflow: hidden; }
       .marketItemColumn .marketItem .thumbnail img {
         max-height: 150px;
         max-width: 150px; }
     .marketItemColumn .marketItem .marketInfo {
       /*border-radius: 25px;*/
-      border: 2px solid #139cf7; }
+      border: 2px solid #139cf7;
+      width: 60%;
+      border-radius: 3px; }
       .marketItemColumn .marketItem .marketInfo .marketItem-btn2 {
         padding: 0px 5px 0px 5px;
         outline: none;
@@ -234,23 +241,22 @@ i.button.active {
     display: flex;
     flex-direction: column;
     align-items: center; }
-    .marketWrap .content #marketMapDiv {
-      flex-direction: row;
-      display: flex;
-      width: 100%;
-      height: 100vh;
-      justify-content: space-evenly; }
-      .marketWrap .content #marketMapDiv #marketMap {
-        max-height: 300px;
-        max-width: 300px;
-        width: 40%;
-        height: 40%;
-        padding-right: 20%;
-        align-content: center; }
-      .marketWrap .content #marketMapDiv .contact-form {
-        width: 40%;
-        height: 40%;
-        padding-right: 20%; }
+    .marketWrap .content .contact-form {
+      width: 40%;
+      height: 40%;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left; }
+      .marketWrap .content .contact-form input {
+        float: right;
+        margin-top: 16px; }
+      .marketWrap .content .contact-form select {
+        margin-top: 16px;
+        float: right; }
+      .marketWrap .content .contact-form textarea {
+        margin-top: 16px;
+        float: right; }
 
 .pickWrap {
   display: flex; }

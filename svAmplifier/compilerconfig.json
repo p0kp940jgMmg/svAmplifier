@@ -18,6 +18,14 @@
   {
     "outputFile": "wwwroot/Styles/MapsStyleSheet.css",
     "inputFile": "Sass/MapsStyleSheet.scss"
+  },
+  {
+    "outputFile": "wwwroot/Styles/UpdateUserStyleSheet.css",
+    "inputFile": "Sass/UpdateUserStyleSheet.scss"
+  },
+  {
+    "outputFile": "wwwroot/Styles/SwedenMapStyleSheet.css",
+    "inputFile": "Sass/SwedenMapStyleSheet.scss"
   }
 ]
 
