@@ -146,7 +146,8 @@ body {
   color: #66615b;
   font-size: 14px;
   font-weight: 300;
-  /*font-family: 'Montserrat', "Helvetica", Arial, sans-serif;*/ }
+  /*font-family: 'Montserrat', "Helvetica", Arial, sans-serif;*/
+  /*background-color: #f4eb90;*/ }
 
 a {
   color: #51bcda; }
@@ -1908,8 +1909,8 @@ textarea.form-control {
   color: #FFFFFF; }
 
 .navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn), [class*="bg"] .navbar-nav .nav-item .nav-link:not(.btn) {
-  color: #9a9a9a;
-  border-color: #FFFFFF; }
+  color: #3F710D;
+  border-color: black; }
 
 .navbar-transparent .navbar-nav .active .nav-link .active .nav-link:hover,
 .navbar-transparent .navbar-nav .active .nav-link:focus,
@@ -1919,7 +1920,7 @@ textarea.form-control {
 [class*="bg"] .navbar-nav .nav-item .nav-link:hover,
 [class*="bg"] .navbar-nav .nav-item .nav-link:focus {
   background-color: transparent;
-  color: #FFFFFF;
+  color: #74AD3C;
   opacity: 1;
   filter: alpha(opacity=100); }
 

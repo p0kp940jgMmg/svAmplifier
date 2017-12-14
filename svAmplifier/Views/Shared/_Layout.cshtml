@@ -13,53 +13,55 @@
 
 </head>
 <body id="bootstrap-overrides">
-    <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
-        <div class="container">
-            <div class="navbar-translate">
-                <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar"></span>
-                    <span class="navbar-toggler-bar"></span>
-                    <span class="navbar-toggler-bar"></span>
-                </button>
-                <a asp-controller="Home" asp-action="Index" class="navbar-brand">svAmplifier</a>
+    <div class="background">
+        <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
+            <div class="container">
+                <div class="navbar-translate">
+                    <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar"></span>
+                        <span class="navbar-toggler-bar"></span>
+                        <span class="navbar-toggler-bar"></span>
+                    </button>
+                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">svAmplifier</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="User" asp-action="SwedenMap" class="nav-link" title="Go to Market" data-placement="bottom">
+                                <i class="fa fa-shopping-bag"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="User" asp-action="UpdateUserInfo" class="nav-link" title="My Items" data-placement="bottom">
+                                <i class="fa fa-user fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            @*<a href="user/logout" target="_blank" class="btn btn-danger btn-round">Logout</a>*@
+                            <a asp-controller="User" class="btn btn-danger btn-round" asp-action="Logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                    </li>
-                    <li class="nav-item">
-                        <a asp-controller="User" asp-action="SwedenMap" class="nav-link" title="Go to Market" data-placement="bottom">
-                            <i class="fa fa-shopping-bag"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a asp-controller="User" asp-action="UpdateUserInfo" class="nav-link" title="My Items" data-placement="bottom">
-                            <i class="fa fa-user fa-2x"></i>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        @*<a href="user/logout" target="_blank" class="btn btn-danger btn-round">Logout</a>*@
-                        <a asp-controller="User" class="btn btn-danger btn-round" asp-action="Logout">Logout</a>
-                    </li>
-                </ul>
-            </div>
+        </nav>
+
+        <div>
+            @RenderBody()
         </div>
-    </nav>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/sweetalert2@7.0.10/dist/sweetalert2.all.js"></script>
+        <script src="~/Scripts/sweetalert2.all.js"></script>
+        <script src="~/Scripts/_LayoutJavaScript.js"></script>
+        @*<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>*@
+        @*<script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>*@
 
-    <div>
-        @RenderBody()
+        @RenderSection("scripts", false)
     </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/sweetalert2@7.0.10/dist/sweetalert2.all.js"></script>
-    <script src="~/Scripts/sweetalert2.all.js"></script>
-    <script src="~/Scripts/_LayoutJavaScript.js"></script>
-    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>*@
-    @*<script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>*@
-
-    @RenderSection("scripts", false)
 </body>
 </html>

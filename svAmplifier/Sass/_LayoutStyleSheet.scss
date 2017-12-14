@@ -1,6 +1,6 @@
 ﻿$siteName: #66615b;
-$icons: #66615b;
-
+$icons: #3F710D;
+$iconsHover: #74AD3C;
 
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td-name, td, button, input, select, textarea {
@@ -194,6 +194,7 @@ body {
     font-size: 14px;
     font-weight: 300;
     /*font-family: 'Montserrat', "Helvetica", Arial, sans-serif;*/
+    /*background-color: #f4eb90;*/
 }
 
 a {
@@ -331,6 +332,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .navbar-transparent {
+
     background-color: transparent !important;
     border-bottom: 1px solid transparent;
 }
@@ -2339,8 +2341,8 @@ textarea.form-control {
 }
 
 .navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn), [class*="bg"] .navbar-nav .nav-item .nav-link:not(.btn) {
-    color: #9a9a9a;
-    border-color: #FFFFFF;
+    color: $icons;
+    border-color: black;
 }
 
 .navbar-transparent .navbar-nav .active .nav-link .active .nav-link:hover,
@@ -2351,7 +2353,7 @@ textarea.form-control {
 [class*="bg"] .navbar-nav .nav-item .nav-link:hover,
 [class*="bg"] .navbar-nav .nav-item .nav-link:focus {
     background-color: transparent;
-    color: #FFFFFF;
+    color: $iconsHover;
     opacity: 1;
     filter: alpha(opacity=100);
 }

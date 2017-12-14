@@ -1,6 +1,7 @@
 svg {
     touch-action: none;
-    background-color: #139cf7
+    background-color: #139cf7;
+    color: #ffab0f;
 }
 
 .jvectormap-container {
@@ -17,7 +18,7 @@ svg {
     display: none;
     border: solid 1px #CDCDCD;
     border-radius: 3px;
-    background: #139cf7;
+    background: #569B11;
     color: white;
     font-family: sans-serif, Verdana;
     font-size: smaller;

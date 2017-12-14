@@ -62,6 +62,8 @@ body {
       width: 45%; }
     .marketItemColumn #buttonDiv .pickItem-btn {
       width: 45%; }
+  .marketItemColumn #emptyDiv {
+    visibility: hidden; }
   .marketItemColumn .marketItem {
     padding: 2px 7px 4px 4px;
     border: solid;
@@ -278,6 +280,11 @@ i.button.active {
       .marketWrap .content .contact-form textarea {
         margin-top: 16px;
         float: right; }
+      .marketWrap .content .contact-form #marketBtn {
+        border-radius: 5%;
+        background-color: #ffab0f;
+        color: white;
+        border-color: #ffab0f; }
 
 .pickWrap {
   display: flex; }

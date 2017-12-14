@@ -95,6 +95,10 @@ body {
         }
     }
 
+    #emptyDiv{
+        visibility:hidden;
+    } 
+    
     .marketItem {
         padding: 2px 7px 4px 4px;
         border: solid;
@@ -352,6 +356,13 @@ i.button.active {
             textarea {
                 margin-top: 16px;
                 float: right;
+            }
+
+            #marketBtn {
+                border-radius: 5%;
+                background-color: #ffab0f;
+                color: white;
+                border-color: #ffab0f;
             }
         }
     }
