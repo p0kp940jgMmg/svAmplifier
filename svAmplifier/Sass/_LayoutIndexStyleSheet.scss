@@ -1,15 +1,16 @@
 ﻿$red: #F99C04;
-$button: #F99C04; //stora knappen
+$button: hsl(39, 100%, 53%); //stora knappen
 $icons: white; //ikoner
-$hoverColor: black;
+$hoverColor: hsl(39, 100%, 53%);
 $brown: #584E4A; //bakgrunden
 $whitey: #ffffff; //förgrunden
 $shazamBild: "http://www.wallpaperbetter.com/wallpaper/981/242/403/green-dark-forest-hd-1080P-wallpaper.jpg";
 $btnColor: white;
 
-$t
 $snap: cubic-bezier(1.000, 0.005, 0.240, 1.000);
 $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+/*background-image: url(http://sandvikssamfallighet.se/index-filer/Kartor/Bilder/Sandvik.gif);*/
 
 * {
     box-sizing: border-box;
@@ -34,7 +35,6 @@ body {
     transition: transform .7s $snap;
     // styling
     background-color: $whitey;
-    /*background-image: url(http://sandvikssamfallighet.se/index-filer/Kartor/Bilder/Sandvik.gif);*/
     font-family: 'Times New Roman';
     padding: 5px 5px 5px 5px;
 }
@@ -67,6 +67,9 @@ body {
     height: 80px;
     background-color: $button;
     border-bottom-right-radius: 100%;
+    border: solid;
+    border-width: 0.5px;
+    border-color: #eebc5c;
 
     &:active {
         i {

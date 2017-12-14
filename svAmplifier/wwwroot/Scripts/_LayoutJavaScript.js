@@ -1,17 +1,4 @@
-﻿/*!
-
- =========================================================
- * Paper Kit 2 - v2.0.0
- =========================================================
-
- * Product Page: http://www.creative-tim.com/product/paper-kit-2
- * Copyright 2017 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT (https://github.com/timcreative/paper-kit/blob/master/LICENSE.md)
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- */
+﻿
 
 var searchVisible = 0;
 var transparent = true;
@@ -28,26 +15,26 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 
     //      Activate the switches with icons
-    if ($('.switch').length != 0) {
+    if ($('.switch').length !== 0) {
         $('.switch')['bootstrapSwitch']();
     }
     //      Activate regular switches
-    if ($("[data-toggle='switch']").length != 0) {
+    if ($("[data-toggle='switch']").length !== 0) {
         $("[data-toggle='switch']").bootstrapSwitch();
     }
 
-    if ($(".tagsinput").length != 0) {
+    if ($(".tagsinput").length !== 0) {
         $(".tagsinput").tagsInput();
     }
     if (window_width >= 768) {
         big_image = $('.page-header[data-parallax="true"]');
 
-        if (big_image.length != 0) {
+        if (big_image.length !== 0) {
             $(window).on('scroll', pk.checkScrollForPresentationPage);
         }
     }
 
-    if ($("#datetimepicker").length != 0) {
+    if ($("#datetimepicker").length !== 0) {
         $('#datetimepicker').datetimepicker({
             icons: {
                 time: "fa fa-clock-o",
@@ -65,7 +52,7 @@ $(document).ready(function () {
     };
 
     // Navbar color change on scroll
-    if ($('.navbar[color-on-scroll]').length != 0) {
+    if ($('.navbar[color-on-scroll]').length !== 0) {
         $(window).on('scroll', pk.checkScrollForTransparentNavbar)
     }
 
@@ -98,7 +85,7 @@ $(document).ready(function () {
 
 $(document).on('click', '.navbar-toggler', function () {
     $toggle = $(this);
-    if (pk.misc.navbar_menu_visible == 1) {
+    if (pk.misc.navbar_menu_visible === 1) {
         $('html').removeClass('nav-open');
         pk.misc.navbar_menu_visible = 0;
         setTimeout(function () {
@@ -155,7 +142,7 @@ pk = {
     }, 17),
 
     initPopovers: function () {
-        if ($('[data-toggle="popover"]').length != 0) {
+        if ($('[data-toggle="popover"]').length !== 0) {
             $('body').append('<div class="popover-filter"></div>');
 
             //    Activate Popovers
@@ -217,7 +204,7 @@ pk = {
     },
     initSliders: function () {
         // Sliders for demo purpose in refine cards section
-        if ($('#sliderRegular').length != 0) {
+        if ($('#sliderRegular').length !== 0) {
             var rangeSlider = document.getElementById('sliderRegular');
             noUiSlider.create(rangeSlider, {
                 start: [5000],
@@ -227,7 +214,7 @@ pk = {
                 }
             });
         }
-        if ($('#sliderDouble').length != 0) {
+        if ($('#sliderDouble').length !== 0) {
             var slider = document.getElementById('sliderDouble');
             noUiSlider.create(slider, {
                 start: [20, 80],

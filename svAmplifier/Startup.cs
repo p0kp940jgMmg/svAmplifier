@@ -51,6 +51,7 @@ namespace svAmplifier
             services.ConfigureApplicationCookie(o => o.LoginPath = "/Home/Login");
 
             services.AddMvc();
+            services.AddSession();
 
         }
 
@@ -62,6 +63,7 @@ namespace svAmplifier
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+            app.UseSession();
         }
     }
 }

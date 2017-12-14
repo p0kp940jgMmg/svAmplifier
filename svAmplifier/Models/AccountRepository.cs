@@ -149,6 +149,13 @@ namespace svAmplifier.Models
                 //sätter PickID till nyvarande användarens UserID
                 pickItem.UserId = GetCurrentUserId();
                 pickItem.Username = GetCurrentUser().Username;
+                var mushroom = await GetMushroom(Convert.ToInt32(pickItem.MushroomName));
+                pickItem.MushroomName = mushroom.MushroomName;
+                pickItem.MushroomPicUrl = mushroom.MushroomPicUrl;
+
+                var region = await GetRegionCode(Convert.ToInt32(pickItem.Region));
+                string regionTrim = region.RegionId.Trim();
+                pickItem.Region = regionTrim;
 
                 //pickItem.Region = "AB-SE";
                 //pickItem.DatePicked = new DateTime(2017, 12, 08);
@@ -298,6 +305,41 @@ namespace svAmplifier.Models
             //Får inte vara Async, User blir null
             return context.User
                 .FirstOrDefault(w => w.AspNetId == aspUserId);
+        }
+
+        public bool SetSessionUsername()
+        {
+            try
+            {
+                var userName = GetCurrentUser().Username;
+
+                contextAccessor.HttpContext.Session.SetString("Username", userName);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+        public string GetSessionUsername()
+        {
+            return contextAccessor.HttpContext.Session.GetString("Username");
+        }
+
+        private Task<Mushrooms> GetMushroom(int id)
+        {
+            return context.Mushrooms
+                .FirstOrDefaultAsync(w => w.Id == id);
+        }
+
+
+        private Task<Regions> GetRegionCode(int code)
+        {
+            return context.Regions
+                .FirstOrDefaultAsync(f => f.Id == code);
         }
     }
 }

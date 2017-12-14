@@ -30,6 +30,8 @@ namespace svAmplifier.Controllers
 
             model.MyItems.Mushrooms = await accountRepos.GetMushrooms();
             model.MyItems.Regions = await accountRepos.GetRegions();
+            //model.Username = accountRepos.GetSessionUsername();
+
 
             return View(model);
         }
@@ -53,6 +55,11 @@ namespace svAmplifier.Controllers
                 string[] cordArr = cord.Split(',');
                 pick.MyItems.NewPick.Latitude = cordArr[0];
                 pick.MyItems.NewPick.Longitude = cordArr[1];
+            }
+            else
+            {
+                pick.MyItems.NewPick.Latitude = "59.36135710000001";
+                pick.MyItems.NewPick.Longitude = "17.996267699999976";
             }
 
             if (!(await accountRepos.AddPick(pick.MyItems.NewPick)))
@@ -113,7 +120,19 @@ namespace svAmplifier.Controllers
         [HttpGet]
         public IActionResult UpdateUserInfo()
         {
-            return View();
+            var user = accountRepos.GetCurrentUser();
+            var userToUpdate = new EditUserInfoVM
+            {
+                City = user.City,
+                Firstname = user.Firstname,
+                Lastname = user.Lastname,
+                Phonenumber = user.Phonenumber,
+                Street = user.Street,
+                Zipcode = user.Zipcode,
+                Username = user.Username
+            };
+
+            return View(userToUpdate);
         }
 
         [AllowAnonymous]
@@ -121,7 +140,7 @@ namespace svAmplifier.Controllers
         public async Task<IActionResult> UpdateUserInfo(EditUserInfoVM edit)
         {
 
-            
+
             if (!(await accountRepos.UpdateUser(edit)))
             {
                 string msg = "Error!, we couldn't update user info";
@@ -138,7 +157,7 @@ namespace svAmplifier.Controllers
         {
             if (await accountRepos.Logout())
             {
-            return RedirectToAction(nameof(Index), "Home");
+                return RedirectToAction(nameof(Index), "Home");
             }
             else
             {

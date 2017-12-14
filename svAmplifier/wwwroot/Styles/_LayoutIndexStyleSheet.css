@@ -1,4 +1,5 @@
-﻿* {
+﻿/*background-image: url(http://sandvikssamfallighet.se/index-filer/Kartor/Bilder/Sandvik.gif);*/
+* {
   box-sizing: border-box; }
 
 html,
@@ -16,7 +17,6 @@ body {
   transform-origin: top left;
   transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
   background-color: #ffffff;
-  /*background-image: url(http://sandvikssamfallighet.se/index-filer/Kartor/Bilder/Sandvik.gif);*/
   font-family: 'Times New Roman';
   padding: 5px 5px 5px 5px; }
 
@@ -41,8 +41,11 @@ body {
   cursor: pointer;
   width: 100px;
   height: 80px;
-  background-color: #F99C04;
-  border-bottom-right-radius: 100%; }
+  background-color: #ffab0f;
+  border-bottom-right-radius: 100%;
+  border: solid;
+  border-width: 0.5px;
+  border-color: #eebc5c; }
   .menu_toggle:active i {
     opacity: 0.8; }
   .menu_toggle i {
@@ -103,9 +106,9 @@ body {
         border: 2px solid white;
         transition: border-color .2s; }
     .menu_items a:hover {
-      color: black; }
+      color: #ffab0f; }
       .menu_items a:hover .icon:after {
-        border-color: black; }
+        border-color: #ffab0f; }
     .menu_items a:active .icon {
       color: white; }
 

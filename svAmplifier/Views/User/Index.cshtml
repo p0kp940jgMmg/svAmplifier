@@ -65,7 +65,7 @@
                 <span asp-validation-for="MyItems.NewPick.City"></span>
                 <br />
                 <label asp-for="MyItems.NewPick.Description"></label>
-                <textarea name="NewPick.Description"
+                <textarea asp-for="MyItems.NewPick.Description"
                           data-val-maxlength-max="5000"
                           data-val-maxlength="The field Description must be a string or array type with a maximum length of '5000'."
                           data-val="true"></textarea>
@@ -127,7 +127,7 @@
                     <span asp-validation-for="MyItems.NewPick.City"></span>
                     <br />
                     <label asp-for="MyItems.NewPick.Description"></label>
-                    <textarea name="NewPick.Description"
+                    <textarea asp-for="MyItems.NewPick.Description"
                               data-val-maxlength-max="5000"
                               data-val-maxlength="The field Description must be a string or array type with a maximum length of '5000'."
                               data-val="true"></textarea>

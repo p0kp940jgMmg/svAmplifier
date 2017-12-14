@@ -53,6 +53,10 @@ namespace svAmplifier.Controllers
             {
                 return View(loginVM);
             }
+            else
+            {
+                //accountRepository.SetSessionUsername();
+            }
 
             return RedirectToAction(nameof(UserController.Index), "User");
 
@@ -74,6 +78,10 @@ namespace svAmplifier.Controllers
             {
                 ModelState.AddModelError(nameof(RegisterUserVM.UserName), "Registration failed...");
                 return View(registerUserVM);
+            }
+            else
+            {
+                accountRepository.SetSessionUsername();
             }
 
             return RedirectToAction(nameof(UserController.Index), "User");

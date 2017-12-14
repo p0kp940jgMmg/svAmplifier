@@ -15,5 +15,6 @@ namespace svAmplifier.Models.VM
         public MyItemsVM MyItems { get; set; } = new MyItemsVM();
         //[Required(ErrorMessage = "Vänligen välj en plats med kartan.")]
         public string Cordinates { get; set; }
+        public string Username { get; set; }
     }
 }
