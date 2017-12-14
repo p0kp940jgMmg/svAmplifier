@@ -21,15 +21,34 @@ body {
     padding: 10px 4px 4px 4px; }
   .historyItemColumn .historyItem {
     padding: 2px 7px 4px 4px;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
     flex-wrap: wrap;
     flex-direction: row;
     display: flex;
     width: 500px;
     color: black;
-    background-color: white; }
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #139cf7;
+    padding: 20px;
+    margin-bottom: 3px;
+    margin-top: 7px; }
+    .historyItemColumn .historyItem .thumbnail img {
+      border-radius: 5px; }
     .historyItemColumn .historyItem .thumbnail .map {
       height: 150px;
       width: 150px; }
+    .historyItemColumn .historyItem .historyInfo {
+      border: 1px solid #139cf7;
+      width: 60%;
+      border-radius: 3px;
+      margin-left: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px; }
+      .historyItemColumn .historyItem .historyInfo p {
+        margin-left: 6px; }
 
 .marketItemColumn {
   padding: 78px 4px 4px 4px;
@@ -70,9 +89,11 @@ body {
         max-width: 150px; }
     .marketItemColumn .marketItem .marketInfo {
       /*border-radius: 25px;*/
-      border: 2px solid #139cf7;
+      border: 1px solid #139cf7;
       width: 60%;
       border-radius: 3px; }
+      .marketItemColumn .marketItem .marketInfo p {
+        margin-left: 6px; }
       .marketItemColumn .marketItem .marketInfo .marketItem-btn2 {
         padding: 0px 5px 0px 5px;
         outline: none;

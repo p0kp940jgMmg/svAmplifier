@@ -157,19 +157,9 @@ namespace svAmplifier.Models
                 string regionTrim = region.RegionId.Trim();
                 pickItem.Region = regionTrim;
 
-                //pickItem.Region = "AB-SE";
-                //pickItem.DatePicked = new DateTime(2017, 12, 08);
-                //pickItem.MushroomName = "MushroomTest";
-                //pickItem.MushroomPicUrl = "test";
-                //pickItem.Latitude = "59.36004";
-                //pickItem.Longitude = "18.00086";
-                //pickItem.SalesItem = false;
-                //pickItem.City = "TEST";
-                //pickItem.Street = "TEST";
-                //pickItem.Zip = "TEST";
-                //pickItem.Price = 100;
-                //pickItem.WeightInGrams = 1000;
-                //pickItem.Username = "UsernameTEST";
+                //var trimmedSum = Convert.ToDecimal(pickItem.Price.ToString().Trim('0'));
+
+                //pickItem.Price = trimmedSum;
 
                 await context.Pick.AddAsync(pickItem);
                 await context.SaveChangesAsync();
@@ -268,7 +258,7 @@ namespace svAmplifier.Models
         {
             return await context.Pick
                 .Where(w => w.SalesItem == true && w.UserId == GetCurrentUserId())
-                .OrderByDescending(o => o.DatePicked)
+                .OrderByDescending(o => o.Id)
                 .ToArrayAsync();
         }
 

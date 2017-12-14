@@ -23,6 +23,7 @@ function initMap() {
 }
 
 
+
 //Klicka utanför forms för att hidea Diven
 $('body').click(function () {
     if ($("#pickWrap").hasClass('active')) {

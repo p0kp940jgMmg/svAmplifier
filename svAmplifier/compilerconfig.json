@@ -26,6 +26,10 @@
   {
     "outputFile": "wwwroot/Styles/SwedenMapStyleSheet.css",
     "inputFile": "Sass/SwedenMapStyleSheet.scss"
+  },
+  {
+    "outputFile": "wwwroot/Styles/_LayoutStyleSheet.css",
+    "inputFile": "Sass/_LayoutStyleSheet.scss"
   }
 ]
 

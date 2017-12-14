@@ -1,22 +1,12 @@
-﻿@model MarketPickVM
+﻿
 @{
     Layout = "_Layout";
 }
 
-@foreach (var item in Model.MarketItems)
             {
-<div class="thumbnail">
-    <a href="#" title="Go to item">
-        <img src="@item.MushroomPicUrl" alt="Lorem ipsum" />
-    </a>
-
-    <p>@item.MushroomName</p>
-    <p>@item.Street @item.Zip @item.City</p>
-    <p>Vikt: @item.WeightInGrams</p>
-    <p>@item.Username @item.Price</p>
-
+<div class="marketItemColumn">
+    @{ Html.RenderPartial("MMarketPV"); }
 </div>
-}
 
 @section scripts{
     <link href="~/Styles/User-Market.css" rel="stylesheet" />

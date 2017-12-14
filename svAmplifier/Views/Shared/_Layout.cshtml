@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,300,700" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="~/Styles/_LayoutStyleSheet.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.min.css">*@
+
 </head>
 <body id="bootstrap-overrides">
     <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
@@ -51,8 +53,12 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="~/Scripts/_LayoutJavaScript.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert2@7.0.10/dist/sweetalert2.all.js"></script>
+    <script src="~/Scripts/sweetalert2.all.js"></script>
+    <script src="~/Scripts/_LayoutJavaScript.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>*@
+    @*<script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>*@
 
     @RenderSection("scripts", false)
 </body>

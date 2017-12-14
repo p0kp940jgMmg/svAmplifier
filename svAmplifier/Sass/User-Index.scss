@@ -34,14 +34,27 @@ body {
 
     .historyItem {
         padding: 2px 7px 4px 4px;
+        border: solid;
+        border-width: 1px;
+        border-color: black;
         flex-wrap: wrap;
         flex-direction: row;
         display: flex;
         width: 500px;
         color: black;
         background-color: white;
+        border-radius: 5px;
+        border: 1px solid #139cf7;
+        padding: 20px;
+        margin-bottom: 3px;
+        margin-top: 7px;
 
         .thumbnail {
+
+            img {
+                border-radius: 5px;
+            }
+
             .map {
                 height: 150px;
                 width: 150px;
@@ -49,6 +62,16 @@ body {
         }
 
         .historyInfo {
+            border: 1px solid $blaa;
+            width: 60%;
+            border-radius: 3px;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            p {
+                margin-left: 6px;
+            }
         }
     }
 }
@@ -104,9 +127,13 @@ body {
 
         .marketInfo {
             /*border-radius: 25px;*/
-            border: 2px solid $blaa;
+            border: 1px solid $blaa;
             width: 60%;
             border-radius: 3px;
+
+            p {
+                margin-left: 6px;
+            }
 
             .marketItem-btn2 {
                 padding: 0px 5px 0px 5px;
