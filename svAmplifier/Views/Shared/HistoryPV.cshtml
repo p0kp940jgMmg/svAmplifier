@@ -8,7 +8,8 @@
         </div>
         <div class="historyInfo">
             <p>Svamp: @item.MushroomName</p>
-            <p>Datum: @item.DatePicked</p>
+            <p>Datum: @item.DatePicked.ToString().Split(' ')[0]</p>
+            <p>Vikt: @item.WeightInGrams g</p>
             <p>@item.Description</p>
         </div>
     </div>

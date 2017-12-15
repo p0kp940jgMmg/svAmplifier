@@ -34,6 +34,11 @@ namespace svAmplifier.Models
             this.context = context;
         }
 
+        internal bool IsUserLoggedIn()
+        {
+            return signInManager.IsSignedIn(contextAccessor.HttpContext.User);
+        }
+
         internal async Task<UserIndexLayoutVM> GetUserIndexLayoutVM()
         {
             UserIndexLayoutVM userIndexLayout = new UserIndexLayoutVM();
@@ -51,7 +56,7 @@ namespace svAmplifier.Models
         {
             var result =
                 await signInManager.PasswordSignInAsync(
-                loginVM.Email, loginVM.Password, false, false);
+                loginVM.Username, loginVM.Password, false, false);
 
             return result.Succeeded;
         }

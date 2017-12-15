@@ -12,7 +12,7 @@
             <p>@item.MushroomName</p>
             <p>Säljs i: @item.City</p>
             <p>Vikt: @item.WeightInGrams g</p>
-            <p>Säljare: @item.Username Pris: @item.Price</p>
+            <p>Säljare: @item.Username    Pris: @item.Price.ToString().Split(',')[0]kr</p>
             <p>Kontakt: @item.User.Phonenumber</p>
             @*<i class='marketItem-btn2 fa fa-minus' href='#'></i>*@
         </div>

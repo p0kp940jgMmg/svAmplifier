@@ -1,7 +1,13 @@
 ﻿/*kommentar*/
 /*center tilll*/
 body {
-  /*font-family: Arial, Helvetica, sans-serif;*/ }
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  border-right: solid;
+  border-left: solid;
+  border-width: 50px;
+  border-image: url("../images/sandvik.gif") 100 round;
+  background-attachment: scroll;
+  background-repeat: repeat; }
 
 .userIndexContainer {
   padding-top: 100px;
@@ -22,8 +28,8 @@ body {
   .historyItemColumn .historyItem {
     padding: 2px 7px 4px 4px;
     border: solid;
-    border-width: 1px;
-    border-color: black;
+    border-width: 1px !important;
+    border-color: #BC3D1A !important;
     flex-wrap: wrap;
     flex-direction: row;
     display: flex;
@@ -31,7 +37,7 @@ body {
     color: black;
     background-color: white;
     border-radius: 5px;
-    border: 1px solid #139cf7;
+    border: solid;
     padding: 20px;
     margin-bottom: 3px;
     margin-top: 7px; }
@@ -68,7 +74,7 @@ body {
     padding: 2px 7px 4px 4px;
     border: solid;
     border-width: 1px;
-    border-color: black;
+    border-color: #3F710D !important;
     flex-wrap: wrap;
     flex-direction: row;
     display: flex;

@@ -4,36 +4,38 @@
 }
 
 <div class="form-container">
-    <h3>Ändra användaruppgifter för @Model.Username</h3>
-    <br />
-    <form asp-controller="User" asp-action="UpdateUserInfo">
-        <label asp-for="@Model.Firstname">Förnamn</label>
-        <input asp-for="@Model.Firstname" />
-        <span asp-validation-for="@Model.Firstname"></span>
+    <div class="form-inner">
+        <h3>Ändra användaruppgifter för @Model.Username</h3>
         <br />
-        <label asp-for="@Model.Lastname">Efternamn</label>
-        <input asp-for="@Model.Lastname" />
-        <span asp-validation-for="@Model.Lastname"></span>
-        <br />
-        <label asp-for="@Model.Street">Gatuadress</label>
-        <input asp-for="@Model.Street" />
-        <span asp-validation-for="@Model.Street"></span>
-        <br />
-        <label asp-for="@Model.Zipcode">Postnummer</label>
-        <input asp-for="@Model.Zipcode" />
-        <span asp-validation-for="@Model.Zipcode"></span>
-        <br />
-        <label asp-for="@Model.City">Postadress</label>
-        <input asp-for="@Model.City" />
-        <span asp-validation-for="@Model.City"></span>
-        <br />
-        <label asp-for="@Model.Phonenumber">Personnummer</label>
-        <input asp-for="@Model.Phonenumber" />
-        <span asp-validation-for="@Model.Phonenumber"></span>
-        <br />
-        <br />
-        <input id="updateUserBtn" class="btn" type="submit" value="Ändra" />
-    </form>
+        <form asp-controller="User" asp-action="UpdateUserInfo">
+            <label id="label1" asp-for="@Model.Firstname">Förnamn</label>
+            <input asp-for="@Model.Firstname" />
+            <span asp-validation-for="@Model.Firstname"></span>
+            <br />
+            <label id="label2" asp-for="@Model.Lastname">Efternamn</label>
+            <input asp-for="@Model.Lastname" />
+            <span asp-validation-for="@Model.Lastname"></span>
+            <br />
+            <label id="label3" asp-for="@Model.Street">Gatuadress</label>
+            <input asp-for="@Model.Street" />
+            <span asp-validation-for="@Model.Street"></span>
+            <br />
+            <label id="label4" asp-for="@Model.Zipcode">Postnummer</label>
+            <input asp-for="@Model.Zipcode" />
+            <span asp-validation-for="@Model.Zipcode"></span>
+            <br />
+            <label id="label5" asp-for="@Model.City">Postadress</label>
+            <input asp-for="@Model.City" />
+            <span asp-validation-for="@Model.City"></span>
+            <br />
+            <label id="label6" asp-for="@Model.Phonenumber">Personnummer</label>
+            <input asp-for="@Model.Phonenumber" />
+            <span asp-validation-for="@Model.Phonenumber"></span>
+            <br />
+            <br />
+            <input id="updateUserBtn" class="btn" type="submit" value="Ändra" />
+        </form>
+    </div>
 </div>
 
 @section scripts{

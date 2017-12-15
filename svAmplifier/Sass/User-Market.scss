@@ -7,6 +7,12 @@ $gron: #5BA512;
 
 body {
     /*font-family: Arial, Helvetica, sans-serif;*/
+    text-align:center;
+
+    h3{
+        padding-top: 100px;
+    }
+
 }
 
 .userIndexContainer {
@@ -51,10 +57,94 @@ body {
     }
 }
 
-.marketItemColumn {
-    padding: 100px 4px 4px 4px;
+.marketItemColumnLeft {
+    padding: 50px 4px 4px 4px;
     flex-wrap: wrap;
     text-align: -webkit-center;
+    float:left;
+    margin-left: 200px;
+
+    #buttonDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: white;
+
+        .marketItem-btn {
+            width: 45%;
+        }
+
+        .pickItem-btn {
+            width: 45%;
+        }
+    }
+
+    .marketItem {
+        padding: 2px 7px 4px 4px;
+        border: solid;
+        border-width: 1px;
+        border-color: black;
+        flex-wrap: wrap;
+        flex-direction: row;
+        display: flex;
+        width: 500px;
+        color: black;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #139cf7;
+        padding: 20px;
+        margin-bottom: 3px;
+        margin-top: 7px;
+
+        .thumbnail {
+            border-radius: 5px;
+            /*border: 5px solid #f99c04;*/
+            width: 35%;
+            height: 7%;
+            overflow: hidden;
+
+            img {
+                max-height: 150px;
+                max-width: 150px;
+            }
+        }
+
+        .marketInfo {
+            /*border-radius: 25px;*/
+            border: 2px solid $blaa;
+            width: 60%;
+            border-radius: 3px;
+
+            .marketItem-btn2 {
+                padding: 0px 5px 0px 5px;
+                outline: none;
+                border-radius: 20%;
+                background: #ffab0f;
+                color: white;
+                font-size: 24px;
+                /* display: block; */
+                position: relative;
+                left: 150%;
+                bottom: -20px;
+                top: auto;
+                /* margin-left: -25px; */
+                /* transition: transform 0.25s; */
+            }
+
+            p {
+                /*font-family: Arial, Helvetica, sans-serif;*/
+            }
+        }
+    }
+}
+
+.marketItemColumnRight {
+    padding: 80px 4px 4px 4px;
+    flex-wrap: wrap;
+    text-align: -webkit-center;
+    float: right;
+    margin-right: 200px;
+
 
     #buttonDiv {
         display: flex;
