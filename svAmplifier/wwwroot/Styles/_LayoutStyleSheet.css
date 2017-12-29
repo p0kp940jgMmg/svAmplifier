@@ -146,8 +146,12 @@ body {
   color: #66615b;
   font-size: 14px;
   font-weight: 300;
-  /*font-family: 'Montserrat', "Helvetica", Arial, sans-serif;*/
-  /*background-color: #f4eb90;*/ }
+  border-right: solid;
+  border-left: solid;
+  border-width: 50px;
+  border-image: url("../images/sandvik.gif") 100 round;
+  background-attachment: scroll;
+  background-repeat: repeat; }
 
 a {
   color: #51bcda; }

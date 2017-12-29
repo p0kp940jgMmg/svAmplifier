@@ -6,7 +6,7 @@
 
 <div class="userIndexContainer">
     <div class="historyItemColumn">
-        <h4>Din plockningar</h4>
+        <h4>Dina plockningar</h4>
         @{ Html.RenderPartial("HistoryPV"); }
     </div>
 
@@ -34,10 +34,6 @@
                 <span asp-validation-for="MyItems.NewPick.MushroomName" type=""></span>
                 <br />
 
-                <label asp-for="MyItems.NewPick.MushroomPicUrl"></label>
-                <input asp-for="MyItems.NewPick.MushroomPicUrl" />
-                <span asp-validation-for="MyItems.NewPick.MushroomPicUrl" type=""></span>
-                <br />
 
                 <label asp-for="MyItems.Regions"></label>
                 <select asp-for="MyItems.NewPick.Region"
@@ -94,11 +90,6 @@
                     <select asp-for="MyItems.NewPick.MushroomName"
                             asp-items="Model.MyItems.Mushrooms"></select>
                     <span asp-validation-for="MyItems.NewPick.MushroomName" type=""></span>
-                    <br />
-
-                    <label asp-for="MyItems.NewPick.MushroomPicUrl"></label>
-                    <input asp-for="MyItems.NewPick.MushroomPicUrl" />
-                    <span asp-validation-for="MyItems.NewPick.MushroomPicUrl" type=""></span>
                     <br />
 
                     <label asp-for="MyItems.Regions"></label>

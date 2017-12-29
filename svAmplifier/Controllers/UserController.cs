@@ -22,6 +22,32 @@ namespace svAmplifier.Controllers
             this.accountRepos = accountRepos;
         }
 
+        Dictionary<string, string> dictionary = new Dictionary<string, string>
+        {
+            { "SE-O",    "Västra Götaland" } ,
+{"SE-N" , "Halland"             },
+{"SE-M" , "Skåne"             },
+{"SE-K" , "Blekinge"             },
+{"SE-I" , "Gotland"             },
+{"SE-H" , "Kalmar"             },
+{"SE-G" , "Kronoberg"             },
+{"SE-F" , "Jönköping"             },
+{"SE-E" , "Östergötland"             },
+{"SE-D" , "Södermanland"             },
+{"SE-C" , "Uppsala"             },
+{"SE-Z" , "Jämtland"             },
+{"SE-Y" , "Västernorrland"             },
+{"SE-X" , "Gävleborg"             },
+{"SE-W" , "Dalarna"             },
+{"SE-BD" , "Norrbotten"             },
+{"SE-T" , "Orebro"             },
+{"SE-S" , "Värmland"             },
+{"SE-U" , "Västmanland"             },
+{"SE-AC" , "Västerbotten"             },
+{ "Stockholm" , "SE-AB"},
+            {"1","2" }
+
+        };
 
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -104,6 +130,9 @@ namespace svAmplifier.Controllers
         {
             var picks = await accountRepos.GetMarketItemsForRegion(id);
 
+            ViewBag.Name = dictionary[id];
+            //ViewBag.Name = "test";
+
             MarketPickVM marketItemVM = new MarketPickVM
             {
                 MarketItems = picks
@@ -166,6 +195,9 @@ namespace svAmplifier.Controllers
             }
 
         }
+
+
+
     }
 
 

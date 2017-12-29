@@ -6,19 +6,21 @@
 
 
 @section scripts{
-    <link href="~/Styles/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/jquery-jvectormap-2.0.3.min.js"></script>
     <script src="~/Scripts/jquery-jvectormap-se-merc.js"></script>
     <script>
         $(function () {
             $('#map').vectorMap({
-                map: 'se_merc', onRegionClick: function (event, code) {
+                map: 'se_merc',
+                backgroundColor: "",
+                onRegionClick: function (event, code) {
                     let url = "@Url.Action(nameof(UserController.Market), "User")";
                     window.location.href = url + "/" + code;
                 } });
         });
     </script>
+    <link href="~/Styles/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
     <link href="~/Styles/SwedenMapStyleSheet.css" rel="stylesheet" />
 }
 <div id="mapContainer">

@@ -29,6 +29,14 @@ namespace svAmplifier.Controllers
 
         public IActionResult Reg()
         {
+
+            var mm = new DateTime().Date;
+
+            if (accountRepository.IsUserLoggedIn())
+            {
+                return RedirectToAction(nameof(UserController.Index), "User");
+            }
+
             return View();
         }
 
@@ -36,6 +44,11 @@ namespace svAmplifier.Controllers
         [HttpGet]
         public IActionResult Login()            
         {
+            if (accountRepository.IsUserLoggedIn())
+            {
+                return RedirectToAction(nameof(UserController.Index), "User");
+            }
+
             return View();
         }
 

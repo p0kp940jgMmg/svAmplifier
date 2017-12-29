@@ -37,7 +37,10 @@ $body.on('touchstart', function() {
 }(jQuery));
 
 (function () {
-	// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+	// trim poly
+    
+    
+    : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
 	if (!String.prototype.trim) {
 		(function () {
 			// Make sure we trim BOM and NBSP

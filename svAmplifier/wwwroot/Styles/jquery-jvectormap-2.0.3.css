@@ -1,6 +1,6 @@
 svg {
     touch-action: none;
-    background-color: #139cf7;
+    background-color: white;
     color: #ffab0f;
 }
 
@@ -10,7 +10,7 @@ svg {
     position: relative;
     overflow: hidden;
     touch-action: none;
-    background-color: #139cf7;
+    background-color: black;
 }
 
 .jvectormap-tip {
@@ -18,10 +18,11 @@ svg {
     display: none;
     border: solid 1px #CDCDCD;
     border-radius: 3px;
-    background: #569B11;
+    background: #F99C04;
     color: white;
     font-family: sans-serif, Verdana;
     font-size: smaller;
+    border-color: #C8F5D1;
     padding: 3px;
 }
 

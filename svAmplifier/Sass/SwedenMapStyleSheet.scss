@@ -1,5 +1,8 @@
 ﻿$textColor: black;
 
+.jvectormap-container {
+    background-color: black !important;
+}
 
 body {
     #mapContainer {
@@ -34,7 +37,7 @@ body {
                 display: block;
                 font-family: Arial, Helvetica, sans-serif;
                 text-transform: uppercase;
-                font-size: 13px;
+                font-size: 17px;
                 color: #999;
                 letter-spacing: 0.12em;
                 text-align: center;
@@ -45,7 +48,7 @@ body {
             h3 {
                 color: $textColor;
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: 54px;
+                font-size: 40px;
                 /* font-weight: 400; */
                 line-height: 72px;
                 letter-spacing: -0.03em;
@@ -55,6 +58,7 @@ body {
                 -webkit-margin-after: 0px;
                 -webkit-margin-start: 0px;
                 -webkit-margin-end: 0px;
+                margin-bottom: 150px;
                 font-weight: bold;
             }
         }
@@ -70,6 +74,7 @@ body {
             height: 700px;
             padding-top: 100px;
             /*margin-right: 10%;*/
+
             .jvectormap-container {
                 border-radius: 20px;
             }

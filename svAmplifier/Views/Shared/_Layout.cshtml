@@ -27,6 +27,9 @@
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <a asp-controller="User" asp-action="Index" class="nav-link" title="Home" data-placement="bottom">
+                                <i class="fa fa-home"></i>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a asp-controller="User" asp-action="SwedenMap" class="nav-link" title="Go to Market" data-placement="bottom">
@@ -34,14 +37,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="User" asp-action="UpdateUserInfo" class="nav-link" title="My Items" data-placement="bottom">
+                            <a asp-controller="User" asp-action="UpdateUserInfo" class="nav-link" title="Min Sida" data-placement="bottom">
                                 <i class="fa fa-user fa-2x"></i>
                             </a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            @*<a href="user/logout" target="_blank" class="btn btn-danger btn-round">Logout</a>*@
                             <a asp-controller="User" class="btn btn-danger btn-round" asp-action="Logout">Logout</a>
                         </li>
                     </ul>

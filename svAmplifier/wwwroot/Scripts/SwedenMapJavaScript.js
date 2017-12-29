@@ -7,3 +7,8 @@ $(function () {
         }
     });
 });
+
+$(document).ready(function () {
+
+    $('')
+});

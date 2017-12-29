@@ -14,5 +14,6 @@ namespace svAmplifier.Models.VM
         public SelectListItem[] Mushrooms { get; set; }
         public SelectListItem[] Regions { get; set; }
         public int SelectedMushID { get; set; }
+
     }
 }

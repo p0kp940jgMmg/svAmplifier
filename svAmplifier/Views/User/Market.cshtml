@@ -3,10 +3,16 @@
     Layout = "_Layout";
 }
 
-            {
-<div class="marketItemColumn">
+<h3>Försäljningar i @ViewBag.Name</h3>
+
+<div class="marketItemColumnLeft">
     @{ Html.RenderPartial("MMarketPV"); }
 </div>
+
+<div class="marketItemColumnRight">
+    @{ Html.RenderPartial("MMarketPV"); }
+</div>
+
 
 @section scripts{
     <link href="~/Styles/User-Market.css" rel="stylesheet" />
